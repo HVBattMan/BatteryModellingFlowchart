@@ -13,3 +13,5 @@
 *.toc
 *.aux
 *.fdb_latexmk
+
+build
