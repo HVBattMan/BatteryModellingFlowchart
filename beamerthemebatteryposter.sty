@@ -30,12 +30,20 @@
 
 \setbeamerfont{structure}{series=\bf,family=\sffamily,size=\Large}
 
+\setbeamertemplate{background canvas}{%
+\begin{tikzpicture}[remember picture,overlay]
+\shade[top color=OxfordBlue,bottom color=white]
+  ([shift={(0cm,-18.5cm)}]current page.north west)
+     rectangle
+  ([shift={(-0cm,18cm)}]current page.south east);
+\end{tikzpicture}%     
+}
 % \setbeamertemplate{itemize/enumerate body begin}{\vspace*{-1ex}}
 % \setbeamertemplate{itemize/enumerate body end}{\vspace*{-0.5ex}}
 
 % \setbeamertemplate{itemize item}{$\blacktriangleright\,$}
 % \setbeamertemplate{itemize subitem}{$\bullet$ }
-% \setlength\leftmargini{3.5em}
+% \setlength\margin{3.5em}
 
 \setbeamertemplate{block begin}{
   \vskip.75ex
@@ -78,7 +86,7 @@
 			 \centering
 			 \includegraphics[height=5cm]{images/sponsors/nexeon-logo.jpg}
 		 \end{minipage}
-		 \vskip1.5em
+		 \vskip2em
    \end{beamercolorbox}
 %
 \ifdefined\footim@ge
