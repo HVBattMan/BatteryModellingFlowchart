@@ -1,8 +1,21 @@
 \documentclass[tikz]{standalone}
 \usepackage{mwe}
 \usepackage{lipsum}
+\usepackage{relsize}
 \usetikzlibrary{positioning	}
 \usetikzlibrary{arrows.meta}
+% Macros
+\newcommand{\xo}{\bigotimes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Poster parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Colours
+\newcommand{\macrocolor}{red}
+\newcommand{\microcolor}{blue}
+\newcommand{\macrotext}[1]{\color{\macrocolor}#1}
+\newcommand{\microtext}[1]{\color{\microcolor}#1}
 
 % Graph box parameters
 \newcommand{\FIGWIDTH}{15cm} % figure width
@@ -13,13 +26,20 @@
 % Axis box and line style
 \tikzstyle{axisbox} = [inner sep=0]
 \tikzstyle{axisline} = [
-		{Latex[length=1cm, width=1cm]}-{Latex[length=1cm, width=1cm]},
+		% {Latex[length=1cm, width=1cm]}-{Latex[length=1cm, width=1cm]},
+		-{Latex[length=1cm, width=1cm]},
 		ultra thick,
 		>=stealth
 ]
 
 % Model point style
-\tikzstyle{modelpoint} = [circle, fill=black, inner sep=0pt, minimum size=3pt]
+\tikzstyle{modelpoint} = [
+		circle,
+		fill=black,
+		inner sep=0pt,
+		minimum size=0.5cm,
+		prefix after command= {\pgfextra{\tikzset{every label/.style={font=\Huge}}}}
+]
 
 % Textbox style
 \tikzstyle{mybox} = [
@@ -31,6 +51,9 @@
 		inner sep=10pt,
 		inner ysep=20pt]
 \tikzstyle{fancytitle} = [fill=red, text=white]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 \begin{tikzpicture}
@@ -51,8 +74,9 @@
 	\node [axisbox, right = \HORFIGSEP of 3_plus_1, anchor=west](3_plus_0) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{example-image-a}};
 	% axis
 	\node [below left = 3cm and 0cm of 3_plus_1_plus_1](x_axis_start) {};
-	\node [below right = 3cm and 0cm of 3_plus_0](x_axis_end) {};
-	\node [draw, axisline](x_axis) (x_axis_start) -- (x_axis_end) {};
+	\node [below right = 3cm and -5cm of 3_plus_0](x_axis_end) {};
+	\draw [axisline, \microcolor] (x_axis_start) -- (x_axis_end)
+		node[right] {\Huge Simpler Microscale};
 
 	% Text
 	\node [mybox, right = of 3d_full] (box){%
@@ -69,13 +93,36 @@
 	\node [axisbox, below = \VERTFIGSEP of 0_plus_1_plus_3, anchor=north](0_plus_0_plus_3) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{example-image-a}};
 	% axis
 	\node [above right = 0cm and 5cm of 2_plus_1_plus_3](y_axis_start) {};
-	\node [below right = 0cm and 5cm of 0_plus_0_plus_3](y_axis_end) {};
-	\node [draw, axisline](y_axis) (y_axis_start) -- (y_axis_end) {};
+	\node [below right = -5cm and 5cm of 0_plus_0_plus_3](y_axis_end) {};
+	\draw [axisline, \macrocolor] (y_axis_start) -- (y_axis_end)
+		node[below] {\Huge Simpler Macroscale};
 
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Inner plot %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 2D+1D models
+	\node [modelpoint,label=right:{$\macrotext{2\xo1}\xo\microtext{0}$}]
+		at (2_plus_1_plus_3 -| 3_plus_0) {};
+	\node [modelpoint,label=right:{$\macrotext{2\xo\bar{1}}\xo\microtext{1}$ (SPMeCC)}]
+		at (2_plus_1bar_plus_3 -| 3_plus_1) {};
+	\node [modelpoint,label=right:{$\macrotext{2\xo\bar{1}}\xo\microtext{0}$}]
+		at (2_plus_1bar_plus_3 -| 3_plus_0) {};
 
-	% Inner plot
-	\node[circle, fill=black, inner sep=0pt, minimum size=3pt,label=below:{$\frac{3}{2}$}] at (0_plus_1_plus_3 -| 3_plus_1) {};
+	% Distributed particle models
+	\node [modelpoint,label=right:{$\macrotext{0\xo0}\xo\microtext{1\xo1}$ (DPM)}]
+		at (0_plus_0_plus_3 -| 3_plus_1_plus_1) {};
 
+	% DFN, SPMe, SPM
+	\node [modelpoint,label=right:{$\macrotext{0\xo1}\xo\microtext{1}$ (DFN)}]
+		at (0_plus_1_plus_3 -| 3_plus_1) {};
+	\node [modelpoint,label=right:{$\macrotext{0\xo0}\xo\microtext{1}$ (SPM)}]
+		at (0_plus_0_plus_3 -| 3_plus_1) {};
+
+	% Fast diffusion models
+	\node [modelpoint,label=right:{$\macrotext{0\xo1}\xo\microtext{0}$}]
+		at (0_plus_1_plus_3 -| 3_plus_0) {};
+	\node [modelpoint,label=right:{$\macrotext{0\xo0}\xo\microtext{0}$}]
+		at (0_plus_0_plus_3 -| 3_plus_0) {};
 \end{tikzpicture}
 
 \end{document}
