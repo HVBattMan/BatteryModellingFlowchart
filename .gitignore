@@ -1,0 +1,15 @@
+*.txt
+*.pdf
+*.tmp
+*.swp
+
+# add any annoying latex output files
+*.ps
+*.log
+*.out
+*.fls
+*.nav
+*.snm
+*.toc
+*.aux
+*.fdb_latexmk
