@@ -44,7 +44,7 @@
 		(single_particle)
 		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/single_particle}};
 	\node [dimensions, microcolor] at (single_particle.north east) {$1$};
-	\node [physics] at (single_particle.south east) {Narrow \\ particle \\ distribution};
+	\node [physics] at (single_particle.south east) {Narrow particle \\ distribution};
 	%
 	\node [axisbox, right = \HORFIGSEP of single_particle, anchor=west](0D_micro)
 		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/0D}};
@@ -53,7 +53,7 @@
 	% axis
 	% \node [below left = 3cm and 0cm of particle_distribution](x_axis_start) {};
 	% \node [below right = 3cm and 0cm of 0D_micro](x_axis_end) {};
-	\node [below right = 3cm and 2.5cm of 3D_homogenised_micro, anchor=center]
+	\node [below right = 3cm and 3cm of 3D_homogenised_micro, anchor=center]
 		(axis_origin) {$\xo$};
 	\node (x_axis_end) at (axis_origin -| 0D_micro.east) {};
 	\draw [axisline, microcolor] (axis_origin) -- (x_axis_end)
@@ -82,14 +82,6 @@
 		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/0D_macro}};
 	\node [dimensions, macrocolor] at (0D_macro.north east) {$0\xo0$};
 	\node [physics] at (0D_macro.south east) {Fast diffusion \\ in electrolyte};
-	% axis
-	% \node [above right = 0cm and 2.5cm of 2plus1D](y_axis_start) {};
-	% \node [below right = 0cm and 2.5cm of 0D_macro](y_axis_end) {};
-	\node (y_axis_end) at (0D_macro.south -| axis_origin) {};
-	\draw [axisline, macrocolor] (axis_origin) -- (y_axis_end)
-		node [left, pos=0, rotate=90, anchor=south east] {Complex}
-		node [left, pos=0.5, rotate=90, anchor=south] {\Large \textsc{Macroscale}}
-		node [below, rotate=90, anchor=south west] {Simple};
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% Inner plot %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -101,7 +93,7 @@
 		modelpoint,
 		label=right:{\includedimensions{$\macrotext{2\xo1}\black{\xo}\microtext{0}$}}
 	]
-		 (2plus1D_0D) at (2plus1D -| 0D_micro) {};
+		 (2plus1D_0D) at ($(2plus1D -| 0D_micro)!0.6!(2plus1D -| 0D_micro.east)$) {};
 	\node [
 		modelpoint,
 		label=right:{
@@ -110,15 +102,16 @@
 				\includedimensions{)}
 			}
 	]
-		(SPMeCC) at (2plusbar1D -| single_particle) {};
+		(SPMeCC)
+		at ($(2plusbar1D.north -| single_particle)!0.5!(2plusbar1D -| single_particle)$) {};
 	\node [
 		modelpoint,
 		label=right:{\includedimensions{$\macrotext{2\xo\bar{1}}\black{\xo}\microtext{0}$}}
 	]
-		(2plusbar1D_0D) at (2plusbar1D -| 0D_micro) {};
+		(2plusbar1D_0D) at (SPMeCC-| 2plus1D_0D) {};
 	% Results
-	\node [axisbox, below left = 5cm and 0cm of particle_distribution, anchor=north west]
-		(2D_results) {\includegraphics[width=45cm, height=15cm]{example-image-a}};
+	\node [axisbox, below left = 5cm and -1cm of particle_distribution, anchor=north west]
+		(2D_results) {\includegraphics[width=53cm, height=15cm]{example-image-a}};
 	\node [profile_pic] (rob_2D) at (2D_results.south west)
 		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
 	\node [profile_pic] (scott_2D) at (rob_2D.south east)
@@ -126,8 +119,8 @@
 	\node [profile_pic] (tino_2D) at (scott_2D.south east)
 		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
 	% Arrows
-	\draw [results_arrow] (2plus1D_0D) -- (2D_results.east);
-	\draw [results_arrow] (SPMeCC) -- (2D_results.south);
+	\draw [results_arrow] (2plus1D_0D) -- (2plus1D_0D -| 2D_results.east);
+	\draw [results_arrow] (SPMeCC) -- (2D_results.south -| SPMeCC);
 	\draw [results_arrow] (2plusbar1D_0D) -- (2D_results.south east);
 
 	%
@@ -141,7 +134,8 @@
 			\includedimensions{)}
 		}
 	]
-		(DFN) at (0plus1D -| single_particle) {};
+		(DFN) at
+		($(0plus1D.north -| single_particle)!0.5!(2plusbar1D.south -| single_particle)$) {};
 	\node [
 		modelpoint,
 		label=right:{
@@ -150,7 +144,9 @@
 			\includedimensions{)}
 		}
 	]
-		(SPM) at (0D_macro -| single_particle) {};
+		(SPM)
+		% at ($(0D_macro -| single_particle)!0.6!(0D_macro.north -| single_particle)$) {};
+		at ($(0D_macro -| single_particle)!0.6!(0plus1D -| single_particle)$) {};
 	\node [
 		modelpoint,
 		label=right:{
@@ -162,14 +158,14 @@
 		(SPMe) at ($(SPM)!0.5!(DFN)$) {};
 	% Results
 	\node [axisbox, below left = 2cm and 0cm of 2D_results, anchor=north west]
-		(SPM_results) {\includegraphics[width=25cm, height=12cm]{example-image-a}};
+		(SPM_results) {\includegraphics[width=25cm, height=24cm]{example-image-a}};
 	\node [profile_pic] (rob_SPM) at (SPM_results.south west)
 		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
 	\node [profile_pic] (scott_SPM) at (rob_SPM.south east)
 		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
 	% Arrows
-	\draw [results_arrow] (DFN) -- (SPM_results.east);
-	\draw [results_arrow] (SPMe) -- ($(SPM_results.east)!0.5!(SPM_results.south east)$);
+	\draw [results_arrow] (DFN) -- (DFN -| SPM_results.east);
+	\draw [results_arrow] (SPMe) -- (SPMe -| SPM_results.east);
 	\draw [results_arrow] (SPM) -- (SPM_results.south east);
 
 	%
@@ -183,7 +179,7 @@
 				\includedimensions{)}
 			}
 	]
-		(DPM) at (0D_macro -| particle_distribution) {};
+		(DPM) at (SPM -| particle_distribution) {};
 	\node [
 		modelpoint,
 		label=right:{
@@ -194,15 +190,15 @@
 	]
 		(MPM) at ($(SPM)!0.5!(DPM)$) {};
 	% Results
-	\node [axisbox, below = 2cm of SPM_results, anchor=north] (distributed_results)
-		{\includegraphics[width=25cm, height=12cm]{example-image-a}};
+	\node [axisbox, anchor=north west] (distributed_results)
+		at ($(0D_macro.north-| SPM_results.west)!0.5!(DPM-| SPM_results.west)$)
+		{\includegraphics[width=30cm, height=14.5cm]{example-image-a}};
 	\node [profile_pic] (toby) at (distributed_results.south west)
 		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
 	% Arrows
-	\draw [results_arrow] (DPM) -- (distributed_results.south);
-	\draw [results_arrow] (MPM)
-		-- ($(distributed_results.south)!0.5!(distributed_results.south east)$);
-	\draw [results_arrow] (SPM) -- (distributed_results.south east);
+	\draw [results_arrow] (DPM) -- (distributed_results.north -| DPM);
+	\draw [results_arrow] (MPM) -- (distributed_results.north -| MPM);
+	\draw [results_arrow] (SPM) -- (distributed_results.north -| SPM);
 
 	%
 	% Fast diffusion models
@@ -211,12 +207,12 @@
 		modelpoint,
 		label=right:{\includedimensions{$\macrotext{0\xo1}\black{\xo}\microtext{0}$}}
 	]
-		(DFNfast) at (0plus1D -| 0D_micro) {};
+		(DFNfast) at (DFN -| 2plus1D_0D) {};
 	\node [
 		modelpoint,
 		label=right:{\includedimensions{$\macrotext{0\xo0}\black{\xo}\microtext{0}$}}
 	]
-		(SPMfast) at (0D_macro -| 0D_micro) {};
+		(SPMfast) at (SPM -| 2plus1D_0D) {};
 	\node [
 		modelpoint,
 		label=right:{
@@ -225,6 +221,30 @@
 		}
 	]
 		(SPMefast) at ($(SPMfast)!0.5!(DFNfast)$) {};
+	% Results
+	\node [axisbox, right = 5cm of distributed_results.south east, anchor=south west]
+		(fast_results)
+		{\includegraphics[width=18cm, height=43cm]{example-image-a}};
+	\node [profile_pic] (tino_fast) at (fast_results.south west)
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
+	\node [profile_pic] (matt_fast) at (tino_fast.south east)
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
+	% Arrows
+	\draw [results_arrow] (DFNfast) -- (DFNfast -| fast_results.east);
+	\draw [results_arrow] (SPMefast) -- (SPMefast -| fast_results.east);
+	\draw [results_arrow] (SPMfast) -- (SPMfast -| fast_results.east);
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% axis
+	% \node [above right = 0cm and 2.5cm of 2plus1D](y_axis_start) {};
+	% \node [below right = 0cm and 2.5cm of 0D_macro](y_axis_end) {};
+	\node (y_axis_end) at (distributed_results.south -| axis_origin) {};
+	\draw [axisline, macrocolor] (axis_origin) -- (y_axis_end)
+		node [left, pos=0, rotate=90, anchor=south east] {Complex}
+		node [left, pos=0.5, rotate=90, anchor=south] {\Large \textsc{Macroscale}}
+		node [below, rotate=90, anchor=south west] {Simple};
 \end{tikzpicture}
 
 \end{document}
