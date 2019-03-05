@@ -21181,7 +21181,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="-324.81316"
+     inkscape:cx="-165.1307"
      inkscape:cy="688.62803"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -21208,8 +21208,15 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.80095875;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect1168"
+       width="174.19904"
+       height="134.19904"
+       x="17.40048"
+       y="72.400482" />
     <g
-       transform="translate(71.167005,-7.8192818)"
+       transform="translate(71.167005,10.444397)"
        id="g4775-06"
        style="fill:#808080">
       <rect
@@ -21238,7 +21245,7 @@
          style="opacity:1;fill:#808080;fill-opacity:1;stroke:#000000;stroke-width:0.41853401;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
     </g>
     <g
-       transform="translate(52.237489,-7.8192818)"
+       transform="translate(52.237489,10.444397)"
        id="g4775-0"
        style="fill:url(#pattern10398);fill-opacity:1">
       <rect
@@ -21267,7 +21274,7 @@
          style="opacity:1;fill:url(#pattern10398);fill-opacity:1;stroke:#000000;stroke-width:0.41853401;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
     </g>
     <g
-       transform="translate(33.277268,-7.8192818)"
+       transform="translate(33.277268,10.444397)"
        id="g4775-9"
        style="fill:url(#pattern10400);fill-opacity:1">
       <rect
@@ -21296,11 +21303,11 @@
          style="opacity:1;fill:url(#pattern10400);fill-opacity:1;stroke:#000000;stroke-width:0.41853401;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
     </g>
     <g
-       transform="translate(14.378457,-7.8192818)"
+       transform="translate(14.378457,10.444397)"
        id="g4775-3"
-       style="fill:url(#pattern8754);fill-opacity:1.0;stroke:#000000;stroke-opacity:1">
+       style="fill:url(#pattern8754);fill-opacity:1;stroke:#000000;stroke-opacity:1">
       <rect
-         style="fill:url(#pattern8754);fill-opacity:1.0;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1"
+         style="fill:url(#pattern8754);fill-opacity:1;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1"
          y="110.84673"
          x="53.29464"
          height="65.389877"
@@ -21308,7 +21315,7 @@
          id="rect3801-5" />
       <rect
          transform="matrix(0.70413617,0.71006496,0,1,0,0)"
-         style="fill:url(#pattern8754);fill-opacity:1.0;stroke:#000000;stroke-width:0.37307668;stroke-opacity:1"
+         style="fill:url(#pattern8754);fill-opacity:1;stroke:#000000;stroke-width:0.37307668;stroke-opacity:1"
          y="57.103355"
          x="38.112381"
          height="65.389877"
@@ -21322,12 +21329,12 @@
          height="37.553364"
          width="18.929516"
          id="rect4770-2"
-         style="opacity:1;fill:url(#pattern8754);fill-opacity:1.0;stroke:#000000;stroke-width:0.41853401;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
+         style="opacity:1;fill:url(#pattern8754);fill-opacity:1;stroke:#000000;stroke-width:0.41853401;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
     </g>
     <g
        id="g4775"
        style="fill:#aa4400"
-       transform="translate(-4.5203543,-7.8192818)">
+       transform="translate(-4.5203543,10.444397)">
       <rect
          style="fill:#aa4400;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1"
          y="110.84673"
