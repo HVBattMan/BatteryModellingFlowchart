@@ -24,7 +24,7 @@
 \newcommand{\VERTFIGSEP}{2cm} % vertical separation between figures
 \newcommand{\HORFIGSEP}{4cm} % horizontal separation between figures
 \tikzstyle{dimensions} = [anchor=north east]
-\tikzstyle{physics} = [anchor=south east, align=left, font=\footnotesize]
+\tikzstyle{physics} = [anchor=south east, align=right, font=\footnotesize]
 
 % Axis box and line style
 \tikzstyle{axisbox} = [inner sep=0]
@@ -41,13 +41,17 @@
 		fill=black,
 		inner sep=0pt,
 		minimum size=0.5cm,
-		% prefix after command= {\pgfextra{\tikzset{every label/.style={font=\Huge}}}}
+		prefix after command= {\pgfextra{\tikzset{every label/.style={font=\small}}}}
 ]
 \tikzstyle{results_arrow} = [
 		-{Latex[length=1cm, width=1cm]},
 		ultra thick,
 		>=stealth
 ]
+% Profile pictures
+\tikzstyle{profile_pic} = [anchor=south west]
+\newcommand{\PPWIDTH}{2cm}
+\newcommand{\PPHEIGHT}{2cm}
 
 % Textbox style
 \tikzstyle{textbox} = [

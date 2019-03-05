@@ -42,12 +42,12 @@
 		(single_particle)
 		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/single_particle}};
 	\node [dimensions, \microcolor] at (single_particle.north east) {$1$};
-	\node [physics] at (single_particle.south east) {Narrow \\ distribution};
+	\node [physics] at (single_particle.south east) {Narrow \\ particle \\ distribution};
 	%
 	\node [axisbox, right = \HORFIGSEP of single_particle, anchor=west](0D_micro)
 		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/0D}};
 	\node [dimensions, \microcolor] at (0D_micro.north east) {$0$};
-	\node [physics] at (0D_micro.south east) {Fast particle \\ diffusion};
+	\node [physics] at (0D_micro.south east) {Fast diffusion \\ in particles};
 	% axis
 	% \node [below left = 3cm and 0cm of particle_distribution](x_axis_start) {};
 	% \node [below right = 3cm and 0cm of 0D_micro](x_axis_end) {};
@@ -80,7 +80,7 @@
 	\node [axisbox, below = \VERTFIGSEP of 0plus1D, anchor=north](0plus0D)
 		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/0D}};
 	\node [dimensions, \macrocolor] at (0plus0D.north east) {$0\xo0$};
-	\node [physics] at (0plus0D.south east) {Fast electrolyte \\ diffusion};
+	\node [physics] at (0plus0D.south east) {Fast diffusion \\ in electrolyte};
 	% axis
 	% \node [above right = 0cm and 2.5cm of 2plus1D](y_axis_start) {};
 	% \node [below right = 0cm and 2.5cm of 0plus0D](y_axis_end) {};
@@ -116,9 +116,14 @@
 	]
 		(2plusbar1D_0D) at (2plusbar1D -| 0D_micro) {};
 	% Results
-	\node [axisbox, anchor=north west] (2D_results)
-		at (2plus1D.north east -| particle_distribution.south west)
-		{\includegraphics[width=45cm, height=15cm]{example-image-a}};
+	\node [axisbox, below left = 5cm and 0cm of particle_distribution, anchor=north west]
+		(2D_results) {\includegraphics[width=45cm, height=15cm]{example-image-a}};
+	\node [profile_pic] (rob_2D) at (2D_results.south west)
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
+	\node [profile_pic] (scott_2D) at (rob_2D.south east)
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
+	\node [profile_pic] (tino_2D) at (scott_2D.south east)
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
 	% Arrows
 	\draw [results_arrow] (2plus1D_0D) -- (2D_results.east);
 	\draw [results_arrow] (SPMeCC) -- (2D_results.south);
@@ -155,9 +160,12 @@
 	]
 		(SPMe) at ($(SPM)!0.5!(DFN)$) {};
 	% Results
-	\node [axisbox, anchor=north west] (SPM_results)
-		at (2plusbar1D.east -| particle_distribution.south west)
-		{\includegraphics[width=25cm, height=25cm]{example-image-a}};
+	\node [axisbox, below left = 2cm and 0cm of 2D_results, anchor=north west]
+		(SPM_results) {\includegraphics[width=25cm, height=12cm]{example-image-a}};
+	\node [profile_pic] (rob_SPM) at (SPM_results.south west)
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
+	\node [profile_pic] (scott_SPM) at (rob_SPM.south east)
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
 	% Arrows
 	\draw [results_arrow] (DFN) -- (SPM_results.east);
 	\draw [results_arrow] (SPMe) -- ($(SPM_results.east)!0.5!(SPM_results.south east)$);
@@ -183,7 +191,17 @@
 			\includedimensions{)}
 		}
 	]
-		(SPMe) at ($(SPM)!0.5!(DPM)$) {};
+		(MPM) at ($(SPM)!0.5!(DPM)$) {};
+	% Results
+	\node [axisbox, below = 2cm of SPM_results, anchor=north] (distributed_results)
+		{\includegraphics[width=25cm, height=12cm]{example-image-a}};
+	\node [profile_pic] (toby) at (distributed_results.south west)
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
+	% Arrows
+	\draw [results_arrow] (DPM) -- (distributed_results.south);
+	\draw [results_arrow] (MPM)
+		-- ($(distributed_results.south)!0.5!(distributed_results.south east)$);
+	\draw [results_arrow] (SPM) -- (distributed_results.south east);
 
 	%
 	% Fast diffusion models
