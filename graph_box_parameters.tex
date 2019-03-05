@@ -12,10 +12,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Colours
-\newcommand{\macrocolor}{red}
-\newcommand{\microcolor}{blue}
-\newcommand{\macrotext}[1]{\color{\macrocolor}#1}
-\newcommand{\microtext}[1]{\color{\microcolor}#1}
+\definecolor{macrocolor}{RGB}{255,51,51}
+\definecolor{microcolor}{RGB}{230,172,0}
+\newcommand{\macrotext}[1]{\color{macrocolor}#1}
+\newcommand{\microtext}[1]{\color{microcolor}#1}
 \newcommand{\black}[1]{\color{black}#1}
 
 % Graph box parameters
@@ -29,9 +29,9 @@
 % Axis box and line style
 \tikzstyle{axisbox} = [inner sep=0]
 \tikzstyle{axisline} = [
-		% {Latex[length=1cm, width=1cm]}-{Latex[length=1cm, width=1cm]},
-		-{Latex[length=1cm, width=1cm]},
-		ultra thick,
+		{Latex[length=1cm, width=1cm]}-{Latex[length=1cm, width=1cm]},
+		% -{Latex[length=1cm, width=1cm]},
+		line width=4mm,
 		>=stealth
 ]
 
@@ -44,7 +44,7 @@
 		prefix after command= {\pgfextra{\tikzset{every label/.style={font=\small}}}}
 ]
 \tikzstyle{results_arrow} = [
-		-{Latex[length=1cm, width=1cm]},
+		-{Latex[length=5mm, width=5mm]},
 		ultra thick,
 		>=stealth
 ]
