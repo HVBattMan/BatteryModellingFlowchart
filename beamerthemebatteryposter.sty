@@ -45,12 +45,14 @@
 % \setbeamertemplate{itemize subitem}{$\bullet$ }
 % \setlength\margin{3.5em}
 
+\setbeamerfont{ref title}{family=\sffamily,size=\normalsize}
+
 \setbeamertemplate{block begin}{
   \vskip.75ex
   \begin{beamercolorbox}[leftskip=0.5em,colsep*=.75ex]{block title}%
-    \usebeamerfont{block title}\insertblocktitle
+    \usebeamerfont{ref title}\insertblocktitle
   \end{beamercolorbox}%
-  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-1pt}}%
   \usebeamerfont{block body}%
   \begin{beamercolorbox}[colsep*=.75ex,sep=.75ex,vmode]{block body}%
     \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
@@ -59,6 +61,14 @@
   \end{beamercolorbox}\vskip1ex
 }
 
+\newenvironment<>{topblock}[1]{%
+  \setbeamercolor{block title}{fg=white,bg=}%
+  \setbeamercolor{block body}{fg=white, bg=}
+  \begin{block}#2{#1}}{\end{block}}
+
+
+
+
 \setbeamertemplate{navigation symbols}{}
 \setbeamerfont{footline}{size=\small,family=\rmfamily}
 \setbeamertemplate{footline}{
@@ -66,26 +76,30 @@
 		 \vskip0.2em
    	 \rule{0.9\textwidth}{0.1em}
 		 \vskip1em
-		 \begin{minipage}{0.18\textwidth}
+		 \begin{minipage}{0.15\textwidth}
 			 \centering
-			 \includegraphics[height=5cm]{images/sponsors/EPSRC-logo.jpg}
+			 \includegraphics[height=3cm]{images/sponsors/EPSRC-logo.jpg}
 		 \end{minipage}%
-		 \begin{minipage}{0.18\textwidth}
+		 \begin{minipage}{0.15\textwidth}
 			 \centering
-			 \includegraphics[height=3cm]{images/sponsors/TFI-logo.png}
+			 \includegraphics[height=3cm]{images/sponsors/InFoMM-logo.pdf}
 		 \end{minipage}%
-		 \begin{minipage}{0.18\textwidth}
+		 \begin{minipage}{0.15\textwidth}
 			 \centering
-			 \includegraphics[height=5cm]{images/sponsors/bboxx-logo.png}
+			 \includegraphics[height=2.2cm]{images/sponsors/TFI-logo.png}
 		 \end{minipage}%
-		 \begin{minipage}{0.18\textwidth}
+		 \begin{minipage}{0.15\textwidth}
 			 \centering
-			 \includegraphics[height=5cm]{images/sponsors/Siemens-Logo.png}
+			 \includegraphics[height=3cm]{images/sponsors/Siemens-Logo.png}
 		 \end{minipage}%
-		 \begin{minipage}{0.18\textwidth}
+		 \begin{minipage}{0.15\textwidth}
 			 \centering
-			 \includegraphics[height=5cm]{images/sponsors/nexeon-logo.jpg}
+			 \includegraphics[height=3cm]{images/sponsors/nexeon-logo.jpg}
 		 \end{minipage}
+		 \begin{minipage}{0.15\textwidth}
+			 \centering
+			 \includegraphics[height=3.5cm]{images/sponsors/bboxx-logo.png}
+		 \end{minipage}%
 		 \vskip2em
    \end{beamercolorbox}
 %
