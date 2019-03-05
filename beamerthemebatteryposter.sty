@@ -1,0 +1,97 @@
+\RequirePackage{tikz}
+\newcommand{\footimage}[1]{\def\footim@ge{#1}}
+\usefonttheme[onlymath]{serif}
+\setbeamertemplate{headline}{  
+  \begin{beamercolorbox}[wd=\textwidth]{headline}
+		 \centering
+     \vskip2em
+		 \begin{minipage}{0.15\textwidth}
+			 \centering
+			 \hspace{1em}
+			 \includegraphics[width=0.7\textwidth]{images/oxford-logo-no-text.png}%
+		 \end{minipage}%
+		 \begin{minipage}{0.6\textwidth}
+			 \parbox{\linewidth}{\normalbaselines\centering\usebeamercolor{title in headline}\color{fg}{\bfseries\rmfamily\huge\inserttitle\par}}
+		 \end{minipage}%
+		 \begin{minipage}{0.15\textwidth}
+			 \includegraphics[width=0.9\textwidth]{images/group-picture.jpg}%
+		 \end{minipage}
+     \vskip1em
+   	 \rule{0.9\textwidth}{0.2em}
+
+     \vskip1em
+	   \parbox{0.6\linewidth}{\normalbaselines\centering\usebeamercolor{title in headline}\color{fg}{\rmfamily\normalsize\insertauthor\par}}%
+     \vskip1em
+   	 \rule{0.6\textwidth}{0.2em}
+     \vskip2em
+  \end{beamercolorbox}
+
+}
+
+\setbeamerfont{structure}{series=\bf,family=\sffamily,size=\Large}
+
+\setbeamertemplate{background canvas}{%
+\begin{tikzpicture}[remember picture,overlay]
+\shade[top color=OxfordBlue,bottom color=white]
+  ([shift={(0cm,-18.5cm)}]current page.north west)
+     rectangle
+  ([shift={(-0cm,18cm)}]current page.south east);
+\end{tikzpicture}%     
+}
+% \setbeamertemplate{itemize/enumerate body begin}{\vspace*{-1ex}}
+% \setbeamertemplate{itemize/enumerate body end}{\vspace*{-0.5ex}}
+
+% \setbeamertemplate{itemize item}{$\blacktriangleright\,$}
+% \setbeamertemplate{itemize subitem}{$\bullet$ }
+% \setlength\margin{3.5em}
+
+\setbeamertemplate{block begin}{
+  \vskip.75ex
+  \begin{beamercolorbox}[leftskip=0.5em,colsep*=.75ex]{block title}%
+    \usebeamerfont{block title}\insertblocktitle
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[colsep*=.75ex,sep=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+\setbeamertemplate{block end}{
+  \end{beamercolorbox}\vskip1ex
+}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamerfont{footline}{size=\small,family=\rmfamily}
+\setbeamertemplate{footline}{
+   \begin{beamercolorbox}[wd=\paperwidth]{footline}\centering
+		 \vskip0.2em
+   	 \rule{0.9\textwidth}{0.1em}
+		 \vskip1em
+		 \begin{minipage}{0.18\textwidth}
+			 \centering
+			 \includegraphics[height=5cm]{images/sponsors/EPSRC-logo.jpg}
+		 \end{minipage}%
+		 \begin{minipage}{0.18\textwidth}
+			 \centering
+			 \includegraphics[height=3cm]{images/sponsors/TFI-logo.png}
+		 \end{minipage}%
+		 \begin{minipage}{0.18\textwidth}
+			 \centering
+			 \includegraphics[height=5cm]{images/sponsors/bboxx-logo.png}
+		 \end{minipage}%
+		 \begin{minipage}{0.18\textwidth}
+			 \centering
+			 \includegraphics[height=5cm]{images/sponsors/Siemens-Logo.png}
+		 \end{minipage}%
+		 \begin{minipage}{0.18\textwidth}
+			 \centering
+			 \includegraphics[height=5cm]{images/sponsors/nexeon-logo.jpg}
+		 \end{minipage}
+		 \vskip2em
+   \end{beamercolorbox}
+%
+\ifdefined\footim@ge
+  \tikz[overlay,remember picture]%
+  \node[anchor=south east,inner sep=0pt] at (current page.south east) %
+  {\footim@ge};
+\fi
+}

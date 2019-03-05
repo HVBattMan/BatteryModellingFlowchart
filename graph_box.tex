@@ -11,15 +11,15 @@
 	% \foreach \y in {0,1,...,29} { \node [anchor=east] at (0,\y) {\y}; }
 
 	% Full 3D
-	\node [axisbox, anchor=north west](3d_full) at (0,90) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{example-image-a}};
+	\node [axisbox, anchor=north west](3d_full) at (0,90) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_unhomogenised}};
 
 	% 3 + 3
-	\node [axisbox, below = \VERTFIGSEP of 3d_full, anchor=north](3_plus_3) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{example-image-a}};
+	\node [axisbox, below = \VERTFIGSEP of 3d_full, anchor=north](3_plus_3) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_homogenised_micro}};
 
 	% Microscale row and axis
-	\node [axisbox, right = \HORFIGSEP of 3_plus_3, anchor=west](3_plus_1_plus_1) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{example-image-a}};
-	\node [axisbox, right = \HORFIGSEP of 3_plus_1_plus_1, anchor=west](3_plus_1) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{example-image-a}};
-	\node [axisbox, right = \HORFIGSEP of 3_plus_1, anchor=west](3_plus_0) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{example-image-a}};
+	\node [axisbox, right = \HORFIGSEP of 3_plus_3, anchor=west](3_plus_1_plus_1) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/particle_distribution}};
+	\node [axisbox, right = \HORFIGSEP of 3_plus_1_plus_1, anchor=west](3_plus_1) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/single_particle}};
+	\node [axisbox, right = \HORFIGSEP of 3_plus_1, anchor=west](3_plus_0) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/0D}};
 	% axis
 	\node [below left = 3cm and 0cm of 3_plus_1_plus_1](x_axis_start) {};
 	\node [below right = 3cm and -5cm of 3_plus_0](x_axis_end) {};
@@ -35,10 +35,10 @@
 	\node[fancytitle, right=10pt] at (box.north west) {A fancy title};
 
 	% Macroscale column and axis
-	\node [axisbox, below = \VERTFIGSEP of 3_plus_3, anchor=north](2_plus_1_plus_3) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{example-image-a}};
-	\node [axisbox, below = \VERTFIGSEP of 2_plus_1_plus_3, anchor=north](2_plus_1bar_plus_3) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{example-image-a}};
-	\node [axisbox, below = \VERTFIGSEP of 2_plus_1bar_plus_3, anchor=north](0_plus_1_plus_3) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{example-image-a}};
-	\node [axisbox, below = \VERTFIGSEP of 0_plus_1_plus_3, anchor=north](0_plus_0_plus_3) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{example-image-a}};
+	\node [axisbox, below = \VERTFIGSEP of 3_plus_3, anchor=north](2_plus_1_plus_3) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/2plus1D}};
+	\node [axisbox, below = \VERTFIGSEP of 2_plus_1_plus_3, anchor=north](2_plus_1bar_plus_3) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/2plusbar1D}};
+	\node [axisbox, below = \VERTFIGSEP of 2_plus_1bar_plus_3, anchor=north](0_plus_1_plus_3) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/0plus1D}};
+	\node [axisbox, below = \VERTFIGSEP of 0_plus_1_plus_3, anchor=north](0_plus_0_plus_3) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/0D}};
 	% axis
 	\node [above right = 0cm and 5cm of 2_plus_1_plus_3](y_axis_start) {};
 	\node [below right = -5cm and 5cm of 0_plus_0_plus_3](y_axis_end) {};

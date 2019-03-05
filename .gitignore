@@ -1,1 +1,19 @@
+*.txt
+*.pdf
+*.tmp
+*.swp
+*.gz
+
+# add any annoying latex output files
+*.vrb
+*.ps
+*.log
+*.out
+*.fls
+*.nav
+*.snm
+*.toc
+*.aux
+*.fdb_latexmk
+
 build
