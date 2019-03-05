@@ -12,7 +12,9 @@
 \usepackage[scaled=0.92]{inconsolata}
 \usepackage[libertine]{newtxmath}
 \usepackage{tikz}
+\usepackage{lipsum}
 \usepackage{standalone}
+\usepackage{ragged2e}
 \input{graph_box_parameters}
 
 %
@@ -25,34 +27,55 @@
   	Ian Roper,
 	Valentin Sulzer,
 	Robert Timms.
-  }
+}
 \title{An Asymptotic Framework\\ for Battery Modelling}
 \institute{Your Institution}
 % Optional foot image
 
 \begin{document}
-\begin{frame}[fragile]\centering
+\begin{frame}[fragile]
+\centering
+
+\vspace{-2em}
+\begin{columns}
+  \begin{column}{0.85\linewidth}
+	\begin{topblock}{}
+	  \small
+	  \lipsum[1-1]
+	\end{topblock}
+  \end{column}
+\end{columns}
+
+
+
+% \textcolor{white}{\rule{0.9\textwidth}{0.1em}}
+\vskip1em
+
 
 % Tikz picture for graphbox
-  \includestandalone{graph_box}
 
+\begin{columns}
+  \begin{column}{0.91\linewidth}
+	\centering
+	\includestandalone[scale=0.93]{graph_box}
+  \end{column}
+\end{columns}
+
+\vspace{1em}
 % Can someone write in the references properly
 \begin{columns}
   \begin{column}{0.91\linewidth}
 	\begin{block}{References}
-	  \footnotesize
-	1. V Sulzer, SJ Chapman, CP Please,
-	DA Howey, CW Monroe, Faster Lead-acid Battery Simulations from Porous-Electrode Theory: I. Physical Model (2019) \\
-	2. Sulzer, Valentin, et al. "Faster
-	Lead-Acid Battery Simulations from
-	Porous-Electrode Theory: II. Asymptotic
-	Analysis." arXiv preprint
-	arXiv:1902.01774 (2019). \\
-	3. Moyles, I.R., Hennessy, M.G.,
-	Myers, T.G. and Wetton, B.R., 2018.
-	Asymptotic reduction of a porous
-	electrode model for lithium-ion
-	batteries. arXiv preprint arXiv:1805.07093.
+	  \scriptsize
+	1. Sulzer, Valentin, et al. "Faster 
+	Lead-Acid Battery Simulations from 
+	Porous-Electrode Theory: II. Asymptotic 
+	Analysis." arXiv preprint 
+	arXiv:1902.01774 (2019). \\ 
+	2. Moyles, I.R., Hennessy, M.G., 
+	Myers, T.G. and Wetton, B.R., 2018. 
+	Asymptotic reduction of a porous 
+	electrode model for lithium-ion 
 	\end{block}
   \end{column}
 \end{columns}

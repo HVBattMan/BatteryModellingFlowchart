@@ -11,22 +11,24 @@
 	% \foreach \y in {0,1,...,29} { \node [anchor=east] at (0,\y) {\y}; }
 
 	% Full 3D
-	\node [axisbox, anchor=north west](3d_full) at (0,90) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_unhomogenised}};
+	% \node [axisbox, anchor=north west](3d_full) at (0,90) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_unhomogenised}};
 
-	% Text
-	\node[textboxtitle,  above right = 0cm and 3cm of 3d_full, anchor=north west]
-		(title) {Introduction};
-	\node [textbox, anchor=north west] (box) at (title.south west) {%
-		\begin{minipage}{0.75\textwidth}
-				\blinditemize[4]
-		\end{minipage}
-	};
+	% % Text
+	% \node[textboxtitle,  above right = 0cm and 3cm of 3d_full, anchor=north west]
+	% 	(title) {Introduction};
+	% \node [textbox, anchor=north west] (box) at (title.south west) {%
+	% 	\begin{minipage}{0.75\textwidth}
+	% 			\blinditemize[4]
+	% 	\end{minipage}
+	% };
 
 
 	% 3 + 3
-	\node [axisbox, below = \VERTFIGSEP of 3d_full, anchor=north](3D_homogenised_micro)
-		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_homogenised_micro}};
+	% \node [axisbox, below = \VERTFIGSEP of 3d_full, anchor=north](3D_homogenised_micro)
+	% 	{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_homogenised_micro}};
+	\node [axisbox, anchor=north west](3D_homogenised_micro) at (0,70) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_homogenised_micro}};
 	\node [dimensions] at (3D_homogenised_micro.north east) {};
+	\node [axisbox, anchor=north west](3_plus_3) at (0,70) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_homogenised_micro}};
 
 	%
 	% Microscale row and axis
@@ -58,7 +60,6 @@
 		node [above, pos=0, anchor=south west] {Complex}
 		node [above, pos=0.5, anchor=south] {\Large \textsc{Microscale}}
 		node [above, pos=1, anchor=south east] {Simple};
-
 	%
 	% Macroscale column and axis
 	%
@@ -77,14 +78,14 @@
 	\node [dimensions, macrocolor] at (0plus1D.north east) {$0\xo1$};
 	\node [physics] at (0plus1D.south east) {Very large \\ conductivity};
 	%
-	\node [axisbox, below = \VERTFIGSEP of 0plus1D, anchor=north](0plus0D)
-		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/0D}};
-	\node [dimensions, macrocolor] at (0plus0D.north east) {$0\xo0$};
-	\node [physics] at (0plus0D.south east) {Fast diffusion \\ in electrolyte};
+	\node [axisbox, below = \VERTFIGSEP of 0plus1D, anchor=north](0D_macro)
+		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/0D_macro}};
+	\node [dimensions, macrocolor] at (0D_macro.north east) {$0\xo0$};
+	\node [physics] at (0D_macro.south east) {Fast diffusion \\ in electrolyte};
 	% axis
 	% \node [above right = 0cm and 2.5cm of 2plus1D](y_axis_start) {};
-	% \node [below right = 0cm and 2.5cm of 0plus0D](y_axis_end) {};
-	\node (y_axis_end) at (0plus0D.south -| axis_origin) {};
+	% \node [below right = 0cm and 2.5cm of 0D_macro](y_axis_end) {};
+	\node (y_axis_end) at (0D_macro.south -| axis_origin) {};
 	\draw [axisline, macrocolor] (axis_origin) -- (y_axis_end)
 		node [left, pos=0, rotate=90, anchor=south east] {Complex}
 		node [left, pos=0.5, rotate=90, anchor=south] {\Large \textsc{Macroscale}}
@@ -149,7 +150,7 @@
 			\includedimensions{)}
 		}
 	]
-		(SPM) at (0plus0D -| single_particle) {};
+		(SPM) at (0D_macro -| single_particle) {};
 	\node [
 		modelpoint,
 		label=right:{
@@ -182,7 +183,7 @@
 				\includedimensions{)}
 			}
 	]
-		(DPM) at (0plus0D -| particle_distribution) {};
+		(DPM) at (0D_macro -| particle_distribution) {};
 	\node [
 		modelpoint,
 		label=right:{
@@ -215,7 +216,7 @@
 		modelpoint,
 		label=right:{\includedimensions{$\macrotext{0\xo0}\black{\xo}\microtext{0}$}}
 	]
-		(SPMfast) at (0plus0D -| 0D_micro) {};
+		(SPMfast) at (0D_macro -| 0D_micro) {};
 	\node [
 		modelpoint,
 		label=right:{
