@@ -13,6 +13,16 @@
 	% Full 3D
 	\node [axisbox, anchor=north west](3d_full) at (0,90) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_unhomogenised}};
 
+	% Text
+	\node[textboxtitle,  above right = 0cm and 3cm of 3d_full, anchor=north west]
+		(title) {Introduction};
+	\node [textbox, anchor=north west] (box) at (title.south west) {%
+		\begin{minipage}{0.75\textwidth}
+				\blinditemize[4]
+		\end{minipage}
+	};
+
+
 	% 3 + 3
 	\node [axisbox, below = \VERTFIGSEP of 3d_full, anchor=north](3_plus_3) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_homogenised_micro}};
 
@@ -24,15 +34,7 @@
 	\node [below left = 3cm and 0cm of 3_plus_1_plus_1](x_axis_start) {};
 	\node [below right = 3cm and -5cm of 3_plus_0](x_axis_end) {};
 	\draw [axisline, \microcolor] (x_axis_start) -- (x_axis_end)
-		node[right] {Simpler Microscale};
-
-	% Text
-	\node [mybox, right = 3cm of 3d_full] (box){%
-    \begin{minipage}{0.7\textwidth}
-        \blinditemize[4]
-    \end{minipage}
-	};
-	\node[fancytitle, right=10pt] at (box.north west) {A fancy title};
+		node[right, align=center] {Simpler \\ Microscale};
 
 	% Macroscale column and axis
 	\node [axisbox, below = \VERTFIGSEP of 3_plus_3, anchor=north](2_plus_1_plus_3) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/2plus1D}};
@@ -43,7 +45,7 @@
 	\node [above right = 0cm and 5cm of 2_plus_1_plus_3](y_axis_start) {};
 	\node [below right = -5cm and 5cm of 0_plus_0_plus_3](y_axis_end) {};
 	\draw [axisline, \macrocolor] (y_axis_start) -- (y_axis_end)
-		node[below] {Simpler Macroscale};
+		node[below, align=center] {Simpler \\ Macroscale};
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% Inner plot %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -13,7 +13,6 @@
 \usepackage[libertine]{newtxmath}
 \usepackage{tikz}
 \usepackage{standalone}
-<<<<<<< HEAD
 \input{graph_box_parameters}
 
 %
@@ -25,75 +24,6 @@
   	Colin Please,
   	Ian Roper,
 	Valentin Sulzer,
-=======
-
-\usepackage{mwe}
-\usepackage{lipsum}
-\usepackage{relsize}
-\usetikzlibrary{positioning	}
-\usetikzlibrary{arrows.meta}
-% Macros
-\newcommand{\xo}{\bigotimes}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Poster parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Colours
-\newcommand{\macrocolor}{red}
-\newcommand{\microcolor}{blue}
-\newcommand{\macrotext}[1]{\color{\macrocolor}#1}
-\newcommand{\microtext}[1]{\color{\microcolor}#1}
-
-% Graph box parameters
-\newcommand{\FIGWIDTH}{15cm} % figure width
-\newcommand{\FIGHEIGHT}{11cm} % figure height
-\newcommand{\VERTFIGSEP}{5cm} % vertical separation between figures
-\newcommand{\HORFIGSEP}{6cm} % horizontal separation between figures
-
-% Axis box and line style
-\tikzstyle{axisbox} = [inner sep=0]
-\tikzstyle{axisline} = [
-		% {Latex[length=1cm, width=1cm]}-{Latex[length=1cm, width=1cm]},
-		-{Latex[length=1cm, width=1cm]},
-		ultra thick,
-		>=stealth
-]
-
-% Model point style
-\tikzstyle{modelpoint} = [
-		circle,
-		fill=black,
-		inner sep=0pt,
-		minimum size=0.5cm,
-		prefix after command= {\pgfextra{\tikzset{every label/.style={font=\Huge}}}}
-]
-
-% Textbox style
-\tikzstyle{mybox} = [
-		draw=red,
-		fill=blue!20,
-		very thick,
-    rectangle,
-		rounded corners,
-		inner sep=10pt,
-		inner ysep=20pt]
-\tikzstyle{fancytitle} = [fill=red, text=white]
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%
-\author[]{
-  	Jon Chapman, 
-  	Matt Hennessy, 
-  	Toby Kirk, 
-	Scott Marquis,\\
-  	Colin Please, 
-  	Ian Roper,
-	Valentin Sulzer, 
->>>>>>> master
 	Robert Timms.
   }
 \title{An Asymptotic Framework\\ for Battery Modelling}
@@ -104,18 +34,13 @@
 \begin{frame}[fragile]\centering
 
 % Tikz picture for graphbox
-<<<<<<< HEAD
   \includestandalone{graph_box}
-=======
-  \includestandalone[scale=0.8]{graph_box}
->>>>>>> master
 
 % Can someone write in the references properly
 \begin{columns}
   \begin{column}{0.91\linewidth}
 	\begin{block}{References}
 	  \footnotesize
-<<<<<<< HEAD
 	1. V Sulzer, SJ Chapman, CP Please,
 	DA Howey, CW Monroe, Faster Lead-acid Battery Simulations from Porous-Electrode Theory: I. Physical Model (2019) \\
 	2. Sulzer, Valentin, et al. "Faster
@@ -127,19 +52,6 @@
 	Myers, T.G. and Wetton, B.R., 2018.
 	Asymptotic reduction of a porous
 	electrode model for lithium-ion
-=======
-	1. V Sulzer, SJ Chapman, CP Please, 
-	DA Howey, CW Monroe, Faster Lead-acid Battery Simulations from Porous-Electrode Theory: I. Physical Model (2019) \\
-	2. Sulzer, Valentin, et al. "Faster 
-	Lead-Acid Battery Simulations from 
-	Porous-Electrode Theory: II. Asymptotic 
-	Analysis." arXiv preprint 
-	arXiv:1902.01774 (2019). \\ 
-	3. Moyles, I.R., Hennessy, M.G., 
-	Myers, T.G. and Wetton, B.R., 2018. 
-	Asymptotic reduction of a porous 
-	electrode model for lithium-ion 
->>>>>>> master
 	batteries. arXiv preprint arXiv:1805.07093.
 	\end{block}
   \end{column}
