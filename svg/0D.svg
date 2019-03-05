@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="single_particle.svg">
+   sodipodi:docname="0D.svg">
   <defs
      id="defs2">
     <marker
@@ -104,7 +104,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="166.28703"
+     inkscape:cx="237.3391"
      inkscape:cy="617.88752"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -139,10 +139,10 @@
        x="17.40048"
        y="72.400482" />
     <circle
-       style="opacity:1;fill:#87deaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.35277778;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.04169228;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path11439-3"
-       cx="73.632744"
-       cy="138.39432"
-       r="40.892239" />
+       cx="102.89876"
+       cy="141.20065"
+       r="4.8327603" />
   </g>
 </svg>
