@@ -16,7 +16,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="3D_unhomogenised.svg">
+   sodipodi:docname="3D_unhomogenised_patterns.svg">
   <defs
      id="defs2">
     <pattern
@@ -21181,7 +21181,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="-324.81316"
+     inkscape:cx="-100.52745"
      inkscape:cy="688.62803"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -21200,7 +21200,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -21353,5 +21353,26 @@
          id="rect4770"
          style="opacity:1;fill:#aa4400;fill-opacity:1;stroke:#000000;stroke-width:0.41853401;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
     </g>
+    <rect
+       style="stroke:none;fill:url(#pattern9411)"
+       width="34.647221"
+       height="34.647221"
+       x="83.407043"
+       y="176.86685"
+       id="rect9739" />
+    <rect
+       style="stroke:none;fill:url(#pattern10068)"
+       width="34.647221"
+       height="34.647221"
+       x="132.23218"
+       y="177.25223"
+       id="rect10396" />
+    <rect
+       style="stroke:none;fill:url(#pattern8754)"
+       width="34.647221"
+       height="34.647221"
+       x="36.30434"
+       y="176.7076"
+       id="rect9082" />
   </g>
 </svg>
