@@ -1,0 +1,57 @@
+% !TEX root = batteryposter.tex
+
+\usepackage{mwe}
+\usepackage{blindtext}
+\usepackage{relsize}
+\usetikzlibrary{positioning	}
+\usetikzlibrary{arrows.meta}
+% Macros
+\newcommand{\xo}{\bigotimes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Poster parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Colours
+\newcommand{\macrocolor}{red}
+\newcommand{\microcolor}{blue}
+\newcommand{\macrotext}[1]{\color{\macrocolor}#1}
+\newcommand{\microtext}[1]{\color{\microcolor}#1}
+
+% Graph box parameters
+\newcommand{\FIGWIDTH}{14cm} % figure width
+\newcommand{\FIGHEIGHT}{9cm} % figure height
+\newcommand{\VERTFIGSEP}{5cm} % vertical separation between figures
+\newcommand{\HORFIGSEP}{7cm} % horizontal separation between figures
+
+% Axis box and line style
+\tikzstyle{axisbox} = [inner sep=0]
+\tikzstyle{axisline} = [
+		% {Latex[length=1cm, width=1cm]}-{Latex[length=1cm, width=1cm]},
+		-{Latex[length=1cm, width=1cm]},
+		ultra thick,
+		>=stealth
+]
+
+% Model point style
+\tikzstyle{modelpoint} = [
+		circle,
+		fill=black,
+		inner sep=0pt,
+		minimum size=0.5cm,
+		% prefix after command= {\pgfextra{\tikzset{every label/.style={font=\Huge}}}}
+]
+
+% Textbox style
+\tikzstyle{mybox} = [
+		draw=red,
+		fill=blue!20,
+		very thick,
+    rectangle,
+		rounded corners,
+		inner sep=10pt,
+		inner ysep=20pt]
+\tikzstyle{fancytitle} = [fill=red, text=white]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
