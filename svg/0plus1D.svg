@@ -117,9 +117,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="-49.68309"
-     inkscape:cy="694.10517"
+     inkscape:zoom="0.7"
+     inkscape:cx="-401.25822"
+     inkscape:cy="702.94597"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -146,15 +146,15 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.80095881;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.81868458;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect1168"
-       width="174.19905"
-       height="134.19904"
-       x="17.40048"
-       y="72.400482" />
+       width="186.18132"
+       height="131.18132"
+       x="17.409344"
+       y="73.40934" />
     <g
        id="g8161"
-       transform="matrix(1.5703995,0,0,0.17436082,-66.121764,143.85301)"
+       transform="matrix(1.5703995,0,0,0.17436082,-77.16815,143.85301)"
        style="stroke-width:1.91104305">
       <rect
          style="fill:#c6afe9;stroke:#000000;stroke-width:0.50563014;stroke-opacity:1"
@@ -185,13 +185,13 @@
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#ff0000;stroke-width:0.70555556;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker8511)"
-       d="m 75.83773,150.9372 c 0,0 2.219839,6.9433 3.274049,10.69078 1.05421,3.74747 4.72619,-8.0805 6.083639,-3.22144 1.35745,4.85906 3.137159,16.58492 3.137159,16.58492"
+       d="m 64.791344,150.9372 c 0,0 2.219839,6.9433 3.274049,10.69078 1.05421,3.74747 4.72619,-8.0805 6.083639,-3.22144 1.35745,4.85906 3.137159,16.58492 3.137159,16.58492"
        id="path8239"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="czzc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.70555556;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
-       d="m 51.04848,197.30846 90.06983,-0.53454"
+       d="m 40.002094,197.30846 90.069826,-0.53454"
        id="path8505"
        inkscape:connector-curvature="0" />
   </g>

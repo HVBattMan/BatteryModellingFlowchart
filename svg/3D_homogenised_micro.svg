@@ -27,7 +27,7 @@
        inkscape:persp3d-origin="63.385057 : 140.24757 : 1"
        id="perspective3713" />
     <pattern
-       patternTransform="matrix(0.26458333,0,0,0.26458333,153.12799,97.260414)"
+       patternTransform="matrix(0.26458333,0,0,0.26458333,152.70416,104.59066)"
        id="pattern4476"
        xlink:href="#pattern10068"
        inkscape:collect="always" />
@@ -2717,9 +2717,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="-70.287775"
-     inkscape:cy="528.31922"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="440.77075"
+     inkscape:cy="755.64676"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -2746,12 +2746,12 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.80095875;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.81868464;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect1168"
-       width="174.19904"
-       height="134.19904"
-       x="17.400478"
-       y="72.400482" />
+       width="186.18132"
+       height="131.18132"
+       x="17.409342"
+       y="75.40934" />
     <g
        transform="translate(71.167005,10.444397)"
        id="g4775-06"
@@ -2812,9 +2812,10 @@
     </g>
     <path
        style="fill:none;stroke:#ff0000;stroke-width:0.35277778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.11666673, 0.70555558;stroke-dashoffset:0;stroke-opacity:1"
-       d="M 118.76227,137.16758 187.7752,97.260414"
+       d="m 118.76227,137.16758 68.58911,-32.57693"
        id="path10546"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <g
        transform="translate(33.277268,10.444397)"
        id="g4775-9"
@@ -2904,14 +2905,16 @@
     </g>
     <path
        style="fill:none;stroke:#fb0000;stroke-width:0.35277778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.11666673, 0.70555558;stroke-dashoffset:0;stroke-opacity:1"
-       d="M 110.11504,137.16758 153.12799,97.260414"
+       d="m 110.11504,137.16758 42.58912,-32.57693"
        id="path10542"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <path
        style="fill:none;stroke:#f40000;stroke-width:0.35277778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.11666673, 0.70555558;stroke-dashoffset:0;stroke-opacity:1"
-       d="M 118.76227,145.8148 187.7752,131.90763"
+       d="m 118.76227,145.8148 68.58911,-6.57693"
        id="path10544"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <rect
        style="opacity:1;fill:#c6afe9;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:0.35277778;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="rect10532"
@@ -2921,22 +2924,23 @@
        y="137.16757" />
     <path
        style="fill:none;stroke:#eb0000;stroke-width:0.35277778;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.11666673, 0.70555558;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 110.11504,145.8148 43.01295,-13.90717"
+       d="m 110.11504,145.8148 42.58912,-6.57693"
        id="path10548"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
     <rect
        style="fill:url(#pattern4476);stroke:none;stroke-width:1"
        width="34.647221"
        height="34.647221"
-       x="153.12799"
-       y="97.260406"
+       x="152.70416"
+       y="104.59065"
        id="rect10396" />
     <rect
        id="rect3801-9-8"
        width="34.647221"
        height="34.647221"
-       x="153.12799"
-       y="97.260414"
+       x="152.70416"
+       y="104.59065"
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.35277778;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>

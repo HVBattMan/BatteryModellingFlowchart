@@ -103,9 +103,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="166.28703"
-     inkscape:cy="617.88752"
+     inkscape:zoom="0.7"
+     inkscape:cx="-4.6018408"
+     inkscape:cy="602.45158"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -132,17 +132,17 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.80095881;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.81868458;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect1168"
-       width="174.19905"
-       height="134.19904"
-       x="17.40048"
-       y="72.400482" />
+       width="186.18132"
+       height="131.18132"
+       x="17.409344"
+       y="75.40934" />
     <circle
        style="opacity:1;fill:#87deaa;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.35277778;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
        id="path11439-3"
-       cx="73.632744"
-       cy="138.39432"
+       cx="84.21608"
+       cy="139.90622"
        r="40.892239" />
   </g>
 </svg>

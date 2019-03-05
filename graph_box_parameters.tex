@@ -5,8 +5,7 @@
 \usepackage{relsize}
 \usetikzlibrary{positioning	}
 \usetikzlibrary{arrows.meta}
-% Macros
-\newcommand{\xo}{\bigotimes}
+\usetikzlibrary{calc}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Poster parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17,12 +16,15 @@
 \newcommand{\microcolor}{blue}
 \newcommand{\macrotext}[1]{\color{\macrocolor}#1}
 \newcommand{\microtext}[1]{\color{\microcolor}#1}
+\newcommand{\black}[1]{\color{black}#1}
 
 % Graph box parameters
-\newcommand{\FIGWIDTH}{14cm} % figure width
-\newcommand{\FIGHEIGHT}{9cm} % figure height
-\newcommand{\VERTFIGSEP}{5cm} % vertical separation between figures
-\newcommand{\HORFIGSEP}{7cm} % horizontal separation between figures
+\newcommand{\FIGWIDTH}{17cm} % figure width
+\newcommand{\FIGHEIGHT}{12cm} % figure height
+\newcommand{\VERTFIGSEP}{2cm} % vertical separation between figures
+\newcommand{\HORFIGSEP}{4cm} % horizontal separation between figures
+\tikzstyle{dimensions} = [anchor=north east]
+\tikzstyle{physics} = [anchor=south east, align=right, font=\footnotesize]
 
 % Axis box and line style
 \tikzstyle{axisbox} = [inner sep=0]
@@ -39,11 +41,20 @@
 		fill=black,
 		inner sep=0pt,
 		minimum size=0.5cm,
-		% prefix after command= {\pgfextra{\tikzset{every label/.style={font=\Huge}}}}
+		prefix after command= {\pgfextra{\tikzset{every label/.style={font=\small}}}}
 ]
+\tikzstyle{results_arrow} = [
+		-{Latex[length=1cm, width=1cm]},
+		ultra thick,
+		>=stealth
+]
+% Profile pictures
+\tikzstyle{profile_pic} = [anchor=south west]
+\newcommand{\PPWIDTH}{2cm}
+\newcommand{\PPHEIGHT}{2cm}
 
 % Textbox style
-\tikzstyle{mybox} = [
+\tikzstyle{textbox} = [
 		draw=red,
 		fill=blue!20,
 		very thick,
@@ -51,7 +62,10 @@
 		rounded corners,
 		inner sep=10pt,
 		inner ysep=20pt]
-\tikzstyle{fancytitle} = [fill=red, text=white]
+\tikzstyle{textboxtitle} = [fill=red, text=white]
 
+% Cross-dimensions
+\newcommand{\xo}{\bigotimes}
+\newcommand{\includedimensions}[1]{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
