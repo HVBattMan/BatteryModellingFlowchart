@@ -11,22 +11,24 @@
 	% \foreach \y in {0,1,...,29} { \node [anchor=east] at (0,\y) {\y}; }
 
 	% Full 3D
-	\node [axisbox, anchor=north west](3d_full) at (0,90) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_unhomogenised}};
+	% \node [axisbox, anchor=north west](3d_full) at (0,90) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_unhomogenised}};
 
-	% Text
-	\node[textboxtitle,  above right = 0cm and 3cm of 3d_full, anchor=north west]
-		(title) {Introduction};
-	\node [textbox, anchor=north west] (box) at (title.south west) {%
-		\begin{minipage}{0.75\textwidth}
-				\blinditemize[4]
-		\end{minipage}
-	};
+	% % Text
+	% \node[textboxtitle,  above right = 0cm and 3cm of 3d_full, anchor=north west]
+	% 	(title) {Introduction};
+	% \node [textbox, anchor=north west] (box) at (title.south west) {%
+	% 	\begin{minipage}{0.75\textwidth}
+	% 			\blinditemize[4]
+	% 	\end{minipage}
+	% };
 
 
 	% 3 + 3
-	\node [axisbox, below = \VERTFIGSEP of 3d_full, anchor=north](3D_homogenised_micro)
-		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_homogenised_micro}};
+	% \node [axisbox, below = \VERTFIGSEP of 3d_full, anchor=north](3D_homogenised_micro)
+	% 	{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_homogenised_micro}};
+	\node [axisbox, anchor=north west](3D_homogenised_micro) at (0,70) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_homogenised_micro}};
 	\node [dimensions] at (3D_homogenised_micro.north east) {};
+	\node [axisbox, anchor=north west](3_plus_3) at (0,70) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_homogenised_micro}};
 
 	%
 	% Microscale row and axis
@@ -58,7 +60,6 @@
 		node [above, pos=0, anchor=south west] {Complex}
 		node [above, pos=0.5, anchor=south] {\Large \textsc{Microscale}}
 		node [above, pos=1, anchor=south east] {Simple};
-
 	%
 	% Macroscale column and axis
 	%
