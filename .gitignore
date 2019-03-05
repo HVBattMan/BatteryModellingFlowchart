@@ -2,8 +2,10 @@
 *.pdf
 *.tmp
 *.swp
+*.gz
 
 # add any annoying latex output files
+*.vrb
 *.ps
 *.log
 *.out
