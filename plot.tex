@@ -42,6 +42,7 @@
   				grid=major, %both, major or minor
   				major grid style={dashed, line width=0.2pt},
   				cycle list name=mylist, 
+				title = {\textbf{DFN vs. SPM vs. SPMe}},
   				legend pos=outer north east,
   				legend style={name=leg, line width = \AXISLINEWIDTH},
 				at = {(3.2cm, -10cm)}
@@ -70,46 +71,37 @@
     		\end{customlegend}
 
 	
-			\begin{axis} 
+			\begin{semilogyaxis} 
 				[
-				width=15cm,
-				height=10cm,
-				xlabel={Discharge Capacity ($\SI{}{\ampere\hour/\metre^2}$)},
-				ylabel={Voltage (V)},
-				xmin=0,
-  				xmax=25,
-  				ymin=3.2,
-  				ymax=3.9,  	
-  				minor tick num=1,
-  				grid=major, %both, major or minor
-  				major grid style={dashed, line width=.1pt},
-  				cycle list name=mylist, 
-  				legend pos=outer north east,
-  				legend style={name=leg},
-  				at={(7cm , -22cm)}, 
+				at={(3.8cm, -22.2cm)},
+				  ybar,
+				  height=9.5cm, 
+				  width=16.3cm,
+				  bar width=0.5cm,
+				  enlargelimits=0.15,
+				  axis line style = {line width=\AXISLINEWIDTH},
+				  legend style={
+				  		anchor=north,legend columns=1, line width=\AXISLINEWIDTH},
+				  area legend,
+				  legend pos = outer north east,
+				  ylabel={Voltage Error (V)},
+				  symbolic x coords={0.1C, 0.5C,1C, 2C, 3C},
+				  xtick=data,
+				  yticklabel shift =0.2cm,
+				  xticklabel shift =0.1cm,
+				  % nodes near coords,
+				  % nodes near coords align={vertical},		
+				  tick style = {line width=0.3mm, black},
+				  title = {\textbf{Versions of the SPMe (vs. DFN)}},
+				  log origin=infty,
 				]	
-				\foreach \x in {0.1, 0.5, 1, 2, 3}{
-					\addplot table [col sep=comma, x index=0, y index=1]
-					{scott_data/C\x.dat};
-					
-					\edef\temp{\noexpand\addlegendentry{\x C}}
-					\temp
-				}
-				\foreach \x in {0.1, 0.5, 1, 2, 3}{
-					\addplot table [col sep=comma, x index=0, y index=2]
-					{scott_data/C\x.dat};
-					\addplot table [col sep=comma, x index=0, y index=3]
-					{scott_data/C\x.dat};
-					}
-			\end{axis}
+				\addplot[fill=bar1, line width=0.7mm, draw=bar1out] coordinates {(0.1C, 0.0018) (0.5C,0.0112) (1C,0.0294) (2C,0.0617) (3C,0.1171) };
+				\addplot[fill=bar2, line width=0.7mm, draw=bar2out] coordinates {(0.1C, 0.0121) (0.5C,0.0541) (1C,0.1024) (2C,0.1966) (3C,0.305) };
+				\addplot[fill=bar3, line width=0.7mm, draw=bar3out]coordinates {(0.1C, 0.047) (0.5C,0.0282) (1C,0.06) (2C,0.1128) (3C,0.1782) };
+				\addplot[fill=bar4, line width=0.7mm, draw=bar4out]coordinates {(0.1C, 0.0199) (0.5C,0.0943) (1C,0.1764) (2C,0.3411) (3C,0.5126) };
+				\legend{Oxford, Literature A, Literature B, Literature C};
+			\end{semilogyaxis}
 							
-			%\node[fill=white, draw, align=center, below=1mm, anchor=north east] (1) at (leg.south east) {Word: Text};
-			
-			\begin{customlegend}[legend entries={DFN,SPM,SPMe},legend style={at={(leg.south)},below=1mm, anchor=north}]
-    			\addlegendimage{black, thick}
-    			\addlegendimage{black,dashed, thick}
-    			\addlegendimage{black, dotted, thick}
-    		\end{customlegend}
 	
 	\end{tikzpicture}
 \end{document}
