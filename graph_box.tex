@@ -61,7 +61,7 @@
 	% \node [below left = 3cm and 0cm of particle_distribution](x_axis_start) {};
 	% \node [below right = 3cm and 0cm of 0D_micro](x_axis_end) {};
 	\node [below right = 3cm and 3cm of 3D_homogenised_micro, anchor=center]
-		(axis_origin) {$\xo$};
+		(axis_origin) {$\bigotimes$};
 	\node (x_axis_end) at (axis_origin -| 0D_micro.east) {};
 	\draw [axisline, microcolor] (axis_origin) -- (x_axis_end)
 		node [above, pos=0, anchor=south west] {Complex}
@@ -118,7 +118,7 @@
 			}
 	]
 		(SPMeCC)
-		at ($(2plusbar1D.north -| single_particle)!0.5!(2plusbar1D -| single_particle)$) {};
+		at ($(2plusbar1D.north -| single_particle)!0.1!(2plusbar1D -| single_particle)$) {};
 	\node [
 		modelpoint,
 		label=right:{\includedimensions{$\macrotext{2\xo\bar{1}}\black{\xo}\microtext{0}$}}
@@ -237,7 +237,7 @@
 	]
 		(SPMefast) at ($(SPMfast)!0.5!(DFNfast)$) {};
 	% Results
-	\node [axisbox, right = 5cm of distributed_results.south east, anchor=south west]
+	\node [axisbox, right = 3cm of distributed_results.south east, anchor=south west]
 		(fast_results)
 		{\includegraphics[width=18cm, height=43cm]{example-image-a}};
 	\node [profile_pic] (tino_fast) at (fast_results.south west)
