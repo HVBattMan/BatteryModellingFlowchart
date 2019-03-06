@@ -2,6 +2,8 @@
 
 \documentclass[tikz]{standalone}
 \input{graph_box_parameters}
+\input{plot_parameters}
+\usepackage{standalone}
 
 \begin{document}
 \begin{tikzpicture}
@@ -172,8 +174,10 @@
 	]
 		(SPMe) at ($(SPM)!0.5!(DFN)$) {};
 	% Results
+	% \node [axisbox, below left = 2cm and 0cm of 2D_results, anchor=north west]
+	% 	(SPM_results) {\includegraphics[width=25cm, height=24cm]{example-image-a}};
 	\node [axisbox, below left = 2cm and 0cm of 2D_results, anchor=north west]
-		(SPM_results) {\includegraphics[width=25cm, height=24cm]{example-image-a}};
+	(SPM_results) {\includestandalone[width=25cm, height=24cm]{plot}};
 	\node [profile_pic] (rob_SPM) at (SPM_results.south west)
 		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
 	\node [profile_pic] (scott_SPM) at (rob_SPM.south east)
