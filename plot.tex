@@ -1,0 +1,120 @@
+%% Put any plot commands in here 
+
+% noniso{D, nx, ylim} 
+
+%\definecolor{c1}{RGB}{102,194,165}
+%\definecolor{c2}{RGB}{252,141,98}
+%\definecolor{c3}{RGB}{141,160,203}
+%\definecolor{c4}{RGB}{231,138,195}
+%\definecolor{c5}{RGB}{166,216,84}
+%\definecolor{c6}{RGB}{255,217,47}
+
+
+\documentclass{standalone}
+
+\input{plot_parameters}
+
+\begin{document}
+	
+
+	\begin{tikzpicture}[]
+	  \scriptsize
+	  \draw[line width=3mm, fill=white] (0,0) rectangle (25cm, -24cm);
+	  % \draw[line width=2mm] (0,0)--(25cm,0) -- (25cm, -24cm)--(0,-24cm)--(0,0);
+	
+			\begin{axis}
+				[
+				width=19cm,
+				height=10cm,
+				xlabel={Discharge Capacity ($\SI{}{\ampere\hour/\metre^2}$)},
+				ylabel={Voltage (V)},
+				ylabel shift = 0.2cm,
+				xlabel shift = 0.2cm,
+				axis line style = {line width=\AXISLINEWIDTH},
+				tick style = {line width=0.3mm, black},
+				xmin=0,
+  				xmax=25,
+  				ymin=3.2,
+  				ymax=3.9,  	
+  				minor tick num=1,
+				yticklabel shift =0.2cm,
+				xticklabel shift =0.3cm,
+  				grid=major, %both, major or minor
+  				major grid style={dashed, line width=0.2pt},
+  				cycle list name=mylist, 
+  				legend pos=outer north east,
+  				legend style={name=leg, line width = \AXISLINEWIDTH},
+				at = {(3.2cm, -10cm)}
+				]	
+				\foreach \x in {0.1, 0.5, 1, 2, 3}{
+					\addplot table [col sep=comma, x index=0, y index=1]
+					{scott_data/C\x.dat};
+					
+					\edef\temp{\noexpand\addlegendentry{\x C}}
+					\temp
+				}
+				\foreach \x in {0.1, 0.5, 1, 2, 3}{
+					\addplot table [col sep=comma, x index=0, y index=2]
+					{scott_data/C\x.dat};
+					\addplot table [col sep=comma, x index=0, y index=3]
+					{scott_data/C\x.dat};
+					}
+			\end{axis}
+							
+			%\node[fill=white, draw, align=center, below=1mm, anchor=north east] (1) at (leg.south east) {Word: Text};
+			
+			\begin{customlegend}[legend entries={DFN,SPM,SPMe},legend style={at={(leg.south)},below=3mm, anchor=north, line width=\AXISLINEWIDTH}]
+    			\addlegendimage{black, line width=\PLOTLINES}
+    			\addlegendimage{black,dashed, line width=\PLOTLINES}
+    			\addlegendimage{black, dotted, line width=\PLOTLINES}
+    		\end{customlegend}
+
+	
+			\begin{axis} 
+				[
+				width=15cm,
+				height=10cm,
+				xlabel={Discharge Capacity ($\SI{}{\ampere\hour/\metre^2}$)},
+				ylabel={Voltage (V)},
+				xmin=0,
+  				xmax=25,
+  				ymin=3.2,
+  				ymax=3.9,  	
+  				minor tick num=1,
+  				grid=major, %both, major or minor
+  				major grid style={dashed, line width=.1pt},
+  				cycle list name=mylist, 
+  				legend pos=outer north east,
+  				legend style={name=leg},
+  				at={(7cm , -22cm)}, 
+				]	
+				\foreach \x in {0.1, 0.5, 1, 2, 3}{
+					\addplot table [col sep=comma, x index=0, y index=1]
+					{scott_data/C\x.dat};
+					
+					\edef\temp{\noexpand\addlegendentry{\x C}}
+					\temp
+				}
+				\foreach \x in {0.1, 0.5, 1, 2, 3}{
+					\addplot table [col sep=comma, x index=0, y index=2]
+					{scott_data/C\x.dat};
+					\addplot table [col sep=comma, x index=0, y index=3]
+					{scott_data/C\x.dat};
+					}
+			\end{axis}
+							
+			%\node[fill=white, draw, align=center, below=1mm, anchor=north east] (1) at (leg.south east) {Word: Text};
+			
+			\begin{customlegend}[legend entries={DFN,SPM,SPMe},legend style={at={(leg.south)},below=1mm, anchor=north}]
+    			\addlegendimage{black, thick}
+    			\addlegendimage{black,dashed, thick}
+    			\addlegendimage{black, dotted, thick}
+    		\end{customlegend}
+	
+	\end{tikzpicture}
+\end{document}
+
+
+
+
+

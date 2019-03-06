@@ -1,0 +1,79 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}                                                                           
+\usepackage{libertine}  
+\usepackage[libertine]{newtxmath}
+
+\usepackage{shellesc}
+
+\usepackage{siunitx}
+
+
+\usepackage{pgfplots}
+%\usepackage{pgfplotstable}
+\usepgfplotslibrary{colormaps} 
+%\usepackage[caption=false]{subfig}
+\usepackage{subcaption} 
+\usepackage{graphicx, floatrow}
+
+\usepackage{lipsum}  
+
+\usetikzlibrary{backgrounds}
+
+%
+%usepackage{pgf}
+%usepackage{mathtools}
+\pgfplotsset{compat=newest}
+
+%\usepackage{tikz}
+%\usetikzlibrary{external}
+%\tikzexternalize % activate!
+
+\definecolor{c1}{RGB}{228,26,28}
+\definecolor{c2}{RGB}{55,126,184}
+\definecolor{c3}{RGB}{77,175,74}
+\definecolor{c4}{RGB}{152,78,163}
+\definecolor{c5}{RGB}{255,127,0}
+\definecolor{c6}{RGB}{106,61,154}
+
+
+
+%\usefonttheme[onlymath]{serif}
+
+
+\newcommand{\PLOTLINES}{0.7mm}
+\newcommand{\AXISLINEWIDTH}{0.7mm}
+
+
+\pgfplotscreateplotcyclelist{mylist}{
+{c1, line width=\PLOTLINES}, 
+{c2,line width=\PLOTLINES},
+{c3,line width=\PLOTLINES},
+{c4,line width=\PLOTLINES},
+{c5,line width=\PLOTLINES},
+{c1,dashed,line width=\PLOTLINES},
+{c1,dotted,line width=\PLOTLINES},
+{c2,dashed,line width=\PLOTLINES},
+{c2,dotted,line width=\PLOTLINES},
+{c3,dashed,line width=\PLOTLINES},
+{c3,dotted,line width=\PLOTLINES},
+{c4,dashed,line width=\PLOTLINES},
+{c4,dotted,line width=\PLOTLINES},
+{c5,dashed,line width=\PLOTLINES},
+{c5,dotted,line width=\PLOTLINES}}
+
+
+\newenvironment{customlegend}[1][]{%
+    \begingroup
+    % inits/clears the lists (which might be populated from previous
+    % axes):
+    \csname pgfplots@init@cleared@structures\endcsname
+    \pgfplotsset{#1}%
+}{%
+    % draws the legend:
+    \csname pgfplots@createlegend\endcsname
+    \endgroup
+}%
+
+% makes \addlegendimage available (typically only available within an
+% axis environment):
+\def\addlegendimage{\csname pgfplots@addlegendimage\endcsname}
