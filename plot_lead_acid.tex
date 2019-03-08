@@ -1,0 +1,124 @@
+% !TEX root = batteryposter.tex
+
+%% Put any plot commands in here
+
+% noniso{D, nx, ylim}
+
+%\definecolor{c1}{RGB}{102,194,165}
+%\definecolor{c2}{RGB}{252,141,98}
+%\definecolor{c3}{RGB}{141,160,203}
+%\definecolor{c4}{RGB}{231,138,195}
+%\definecolor{c5}{RGB}{166,216,84}
+%\definecolor{c6}{RGB}{255,217,47}
+
+
+\documentclass{standalone}
+
+\input{plot_parameters}
+
+\begin{document}
+
+
+	\begin{tikzpicture}[]
+	  \scriptsize
+
+			\begin{axis}
+				[
+				width=15cm,
+				height=9cm,
+				xlabel={Discharge Capacity ($\SI{}{\ampere\hour/\metre^2}$)},
+				ylabel={Voltage (V)},
+				axis line style = {line width=\AXISLINEWIDTH},
+				tick style = {line width=0.3mm, black},
+				xmin=0,
+  				xmax=25,
+  				ymin=3.2,
+  				ymax=3.9,
+  				minor tick num=1,
+				yticklabel shift =0.2cm,
+				xticklabel shift =0.3cm,
+  				grid=major, %both, major or minor
+  				major grid style={dashed, line width=0.2pt},
+  				cycle list name=mylist,
+				title = {\textbf{DFN vs. SPM vs. SPMe}},
+  				legend style={
+						name=leg,
+						line width = \AXISLINEWIDTH,
+						at={(0.5,-0.4)},
+				  	anchor=north,
+						legend columns=-1,
+				  	/tikz/every even column/.append style={column sep=0.5cm}}
+				]
+				\foreach \x in {0.1, 0.5, 1, 2, 3}{
+					\addplot table [col sep=comma, x index=0, y index=1]
+					{scott_data/C\x.dat};
+
+					\edef\temp{\noexpand\addlegendentry{\x C}}
+					\temp
+				}
+				\foreach \x in {0.1, 0.5, 1, 2, 3}{
+					\addplot table [col sep=comma, x index=0, y index=2]
+					{scott_data/C\x.dat};
+					\addplot table [col sep=comma, x index=0, y index=3]
+					{scott_data/C\x.dat};
+					}
+			\end{axis}
+
+			%\node[fill=white, draw, align=center, below=1mm, anchor=north east] (1) at (leg.south east) {Word: Text};
+
+			\begin{customlegend}[
+				legend entries={DFN,SPM,SPMe},
+				legend style={
+					at={(leg.west)},
+					right=3mm,
+					anchor=east,
+					line width=\AXISLINEWIDTH,
+					% legend columns=-1,
+					% /tikz/every even column/.append style={column sep=0.5cm}
+				}
+			]
+  			\addlegendimage{black, line width=\PLOTLINES}
+  			\addlegendimage{black,dashed, line width=\PLOTLINES}
+  			\addlegendimage{black, dotted, line width=\PLOTLINES}
+  		\end{customlegend}
+
+			\begin{axis}[
+				at={(0cm, -15cm)},
+				width = 15cm,
+				height = 9cm,
+				ymin = 0,
+				ymax = 7,
+				xmin = 0,
+				xmax = 0.0036,
+			 	xlabel = {${x}$ (m)},
+				ylabel = {Concentration ($\si{\Molar}$)},
+				axis line style = {line width=\AXISLINEWIDTH},
+				tick style = {line width=0.3mm, black},
+				legend style ={
+					at={(0.5,-0.6)},
+					anchor=north,
+					legend columns=-1,
+					/tikz/every even column/.append style={column sep=0.5cm}
+				}
+			]
+			\addplot[color=black, opacity=0.1] table{tino_data/concs/Numerical/0.5C_idx=0.dat};
+			\addplot[color=black, opacity=0.4] table{tino_data/concs/Numerical/0.5C_idx=251.dat};
+			\addplot[color=black, opacity=0.7] table{tino_data/concs/Numerical/0.5C_idx=502.dat};
+			\addplot[color=black, opacity=0.9999999999999999] table{tino_data/concs/Numerical/0.5C_idx=753.dat};
+			\addplot[dashdotdotted, color=green!70!black, opacity=0.1] table{tino_data/concs/LOQS/0.5C_idx=0.dat};
+			\addplot[dashdotdotted, color=green!70!black, opacity=0.4] table{tino_data/concs/LOQS/0.5C_idx=251.dat};
+			\addplot[dashdotdotted, color=green!70!black, opacity=0.7] table{tino_data/concs/LOQS/0.5C_idx=502.dat};
+			\addplot[dashdotdotted, color=green!70!black, opacity=0.9999999999999999] table{tino_data/concs/LOQS/0.5C_idx=753.dat};
+			\addplot[dotted, color=red, opacity=0.1] table{tino_data/concs/FOQS/0.5C_idx=0.dat};
+			\addplot[dotted, color=red, opacity=0.4] table{tino_data/concs/FOQS/0.5C_idx=251.dat};
+			\addplot[dotted, color=red, opacity=0.7] table{tino_data/concs/FOQS/0.5C_idx=502.dat};
+			\addplot[dotted, color=red, opacity=0.9999999999999999] table{tino_data/concs/FOQS/0.5C_idx=753.dat};
+			\addplot[dashed, color=blue, opacity=0.1] table{tino_data/concs/Composite/0.5C_idx=0.dat};
+			\addplot[dashed, color=blue, opacity=0.4] table{tino_data/concs/Composite/0.5C_idx=251.dat};
+			\addplot[dashed, color=blue, opacity=0.7] table{tino_data/concs/Composite/0.5C_idx=502.dat};
+			\addplot[dashed, color=blue, opacity=0.9999999999999999] table{tino_data/concs/Composite/0.5C_idx=753.dat};
+
+		\end{axis}
+
+	\end{tikzpicture}
+\end{document}

@@ -256,23 +256,20 @@
 		at (fast_results.north west) {\small Lead-acid};
 	\node [profile_pic, anchor=north east] (tino_fast) at (fast_results.north east)
 		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
-	\node [anchor=north] (lead_acid_voltages)
+	\node [anchor=north] (lead_acid)
 		at (lead_acid_title.south -| fast_results.north)
-		{\includegraphics[width=16cm]{figures/V_T_ODEs_DFN}};
-	\node [anchor=north] (lead_acid_concentration)
-		at (lead_acid_voltages.south)
-		{\includegraphics[width=16cm]{figures/V_T_ODEs_DFN}};
+		{\includestandalone[width=17cm]{plot_lead_acid}};
 	\draw [line width=1mm]
-		(lead_acid_concentration.south -| fast_results.west)
-		-- (lead_acid_concentration.south -| fast_results.east);
+		(lead_acid.south -| fast_results.west)
+		-- (lead_acid.south -| fast_results.east);
 	%lifp
 	\node [anchor=north west] (lifp_title)
-		at (lead_acid_concentration.south -| fast_results.west)
+		at (lead_acid.south -| fast_results.west)
 		{\small Lithium iron phosphate};
 	\node [anchor=south] at (fast_results.south)
 		{\includegraphics[width=16cm]{figures/V_T_ODEs_DFN}};
 	\node [profile_pic, anchor=north east] (matt_fast) at
-		(lead_acid_concentration.south -| fast_results.east)
+		(lead_acid.south -| fast_results.east)
 		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
 	% Arrows
 	\draw [results_arrow] (DFNfast) -- (DFNfast -| fast_results.east);

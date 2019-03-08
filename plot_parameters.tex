@@ -1,6 +1,6 @@
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}                                                                           
-\usepackage{libertine}  
+\usepackage[T1]{fontenc}
+\usepackage{libertine}
 \usepackage[libertine]{newtxmath}
 
 \usepackage{shellesc}
@@ -10,12 +10,12 @@
 
 \usepackage{pgfplots}
 %\usepackage{pgfplotstable}
-\usepgfplotslibrary{colormaps} 
+\usepgfplotslibrary{colormaps}
 %\usepackage[caption=false]{subfig}
-\usepackage{subcaption} 
+\usepackage{subcaption}
 \usepackage{graphicx, floatrow}
 
-\usepackage{lipsum}  
+\usepackage{lipsum}
 
 \usetikzlibrary{backgrounds}
 
@@ -45,7 +45,7 @@
 
 
 \pgfplotscreateplotcyclelist{mylist}{
-{c1, line width=\PLOTLINES}, 
+{c1, line width=\PLOTLINES},
 {c2,line width=\PLOTLINES},
 {c3,line width=\PLOTLINES},
 {c4,line width=\PLOTLINES},
@@ -77,3 +77,6 @@
 % makes \addlegendimage available (typically only available within an
 % axis environment):
 \def\addlegendimage{\csname pgfplots@addlegendimage\endcsname}
+\usepackage{mhchem}
+\usepackage{siunitx}
+\DeclareSIUnit\Molar{\textsc{m}}
