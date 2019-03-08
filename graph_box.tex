@@ -111,7 +111,7 @@
 		modelpoint,
 		label=right:{\includedimensions{$\macrotext{2\xo1}\black{\xo}\microtext{0}$}}
 	]
-		 (2plus1D_0D) at ($(2plus1D -| 0D_micro)!0.6!(2plus1D -| 0D_micro.east)$) {};
+		 (2plus1D_0D) at ($(2plus1D -| 0D_micro)!0.8!(2plus1D -| 0D_micro.east)$) {};
 	\node [
 		modelpoint,
 		label=right:{
@@ -128,14 +128,15 @@
 	]
 		(2plusbar1D_0D) at (SPMeCC-| 2plus1D_0D) {};
 	% Results
-	\node [axisbox, below left = 5cm and -1cm of particle_distribution, anchor=north west]
-		(2D_results) {\includegraphics{figures/V_2D} \includegraphics{figures/T_2D} \includegraphics{figures/V_SPMeCC}};
-	\node [profile_pic] (rob_2D) at (2D_results.south west)
+	\node [axisbox, fill=white, draw,line width=3mm, below left = 5cm and -1cm of particle_distribution, anchor=north west, minimum width=54.5cm,minimum height=14cm]
+		(2D_results) {\hspace{1.5em} \includegraphics{figures/V_SPMeCC} \includegraphics{figures/V_2D} \includegraphics{figures/T_2D}};
+	\node [profile_pic] (rob_2D) at (2D_results.south west)	
 		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
-	\node [profile_pic] (scott_2D) at (rob_2D.south east)
+	\node [profile_pic] (tino_2D) at (rob_2D.north west)
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};		
+	\node [profile_pic] (scott_2D) at (tino_2D.north west)
 		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
-	\node [profile_pic] (tino_2D) at (scott_2D.south east)
-		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
+
 	% Arrows
 	\draw [results_arrow] (2plus1D_0D) -- (2plus1D_0D -| 2D_results.east);
 	\draw [results_arrow] (SPMeCC) -- (2D_results.south -| SPMeCC);
@@ -210,7 +211,7 @@
 	]
 		(MPM) at ($(SPM)!0.5!(DPM)$) {};
 	% Results
-	\node [axisbox, anchor=north west] (distributed_results)
+	\node [axisbox, fill=white, draw,line width=3mm, anchor=north west, minimum width=33cm,minimum height=16cm] (distributed_results)
 		at ($(0D_macro.north-| SPM_results.west)!0.5!(DPM-| SPM_results.west)$)
 		{\includegraphics[height=14.5cm]{figures/PSD_results_1}\includegraphics[height=14.5cm]{figures/PSD_results_2}};
 	\node [profile_pic] (toby) at (distributed_results.south west)
