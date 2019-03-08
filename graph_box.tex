@@ -31,7 +31,7 @@
 	\node [axisbox, anchor=north west](3D_homogenised_micro) at (0,70) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_homogenised_micro}};
 	\draw [black, line width=\BORDERWIDTH]
 		(3D_homogenised_micro.south west) rectangle (3D_homogenised_micro.north east);
-	\node [dimensions] at (3D_homogenised_micro.north east) {$\macrotext{3}\black{\xo}\microtext{3}$};
+	  \node [dimensions] at (3D_homogenised_micro.north east) {$\macrotext{(3)}\black{\xo}\microtext{(3)}$};
 	\node [physics] at (3D_homogenised_micro.south east) {Full 3D};
 
 	%
@@ -43,7 +43,7 @@
 			{figures/particle_distribution}};
 	\draw [microcolor, line width=\BORDERWIDTH]
 		(particle_distribution.south west) rectangle (particle_distribution.north east);
-	\node [dimensions, microcolor] at (particle_distribution.north east) {$1\xo1$};
+	  \node [dimensions] at (particle_distribution.north east) {$\macrotext{(\phantom{3})}\black{\xo}\microtext{(1\xo1)}$};
 	\node [physics] at (particle_distribution.south east) {Spherical \\ particles};
 	%
 	\node [axisbox, microcolor, right = \HORFIGSEP of particle_distribution, anchor=west]
@@ -51,20 +51,20 @@
 		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/single_particle}};
 	\draw [microcolor, line width=\BORDERWIDTH]
 		(single_particle.south west) rectangle (single_particle.north east);
-	\node [dimensions, microcolor] at (single_particle.north east) {$1$};
+	\node [dimensions, microcolor] at (single_particle.north east) {$\macrotext{(\phantom{3})}\black{\xo}\microtext{(1)}$};
 	\node [physics] at (single_particle.south east) {Narrow particle \\ distribution};
 	%
 	\node [axisbox, microcolor, right = \HORFIGSEP of single_particle, anchor=west](0D_micro)
 		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/0D}};
 	\draw [microcolor, line width=\BORDERWIDTH]
 		(0D_micro.south west) rectangle (0D_micro.north east);
-	\node [dimensions, microcolor] at (0D_micro.north east) {$0$};
+	\node [dimensions, microcolor] at (0D_micro.north east) {$\macrotext{(\phantom{3})}\black{\xo}\microtext{(0)}$};
 	\node [physics] at (0D_micro.south east) {Fast diffusion \\ in particles};
 	% axis
 	% \node [below left = 3cm and 0cm of particle_distribution](x_axis_start) {};
 	% \node [below right = 3cm and 0cm of 0D_micro](x_axis_end) {};
 	\node [below right = 3cm and 3cm of 3D_homogenised_micro, anchor=center]
-		(axis_origin) {$\bigotimes$};
+		(axis_origin) {$+$};
 	\node (x_axis_end) at (axis_origin -| 0D_micro.east) {};
 	\draw [axisline, microcolor] (axis_origin) -- (x_axis_end)
 		node [above, pos=0, anchor=south west] {Complex}
@@ -77,28 +77,28 @@
 		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/2plus1D}};
 	\draw [macrocolor, line width=\BORDERWIDTH]
 		(2plus1D.south west) rectangle (2plus1D.north east);
-	\node [dimensions, macrocolor] at (2plus1D.north east) {$2\xo1$};
+		\node [dimensions, macrocolor] at (2plus1D.north east) {$\macrotext{(2+1)}\black{\xo}\microtext{(\phantom{3})}$};
 	\node [physics] at (2plus1D.south east) {Thin \\ electrodes};
 	%
 	\node [axisbox, below = \VERTFIGSEP of 2plus1D, anchor=north](2plusbar1D)
 		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/2plusbar1D}};
 	\draw [macrocolor, line width=\BORDERWIDTH]
 		(2plusbar1D.south west) rectangle (2plusbar1D.north east);
-	\node [dimensions, macrocolor] at (2plusbar1D.north east) {$2\xo\bar{1}$};
+		\node [dimensions, macrocolor] at (2plusbar1D.north east) {$\macrotext{(2+\bar{1})}\black{\xo}\microtext{(\phantom{3})}$};
 	\node [physics] at (2plusbar1D.south east) {Large \\ conductivity};
 	%
 	\node [axisbox, below = \VERTFIGSEP of 2plusbar1D, anchor=north](0plus1D)
 		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/0plus1D}};
 	\draw [macrocolor, line width=\BORDERWIDTH]
 		(0plus1D.south west) rectangle (0plus1D.north east);
-	\node [dimensions, macrocolor] at (0plus1D.north east) {$0\xo1$};
+	\node [dimensions, macrocolor] at (0plus1D.north east) {$\macrotext{(1)}\black{\xo}\microtext{(\phantom{3})}$};
 	\node [physics] at (0plus1D.south east) {Very large \\ conductivity};
 	%
 	\node [axisbox, below = \VERTFIGSEP of 0plus1D, anchor=north](0D_macro)
 		{\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/0D_macro}};
 	\draw [macrocolor, line width=\BORDERWIDTH]
 		(0D_macro.south west) rectangle (0D_macro.north east);
-	\node [dimensions, macrocolor] at (0D_macro.north east) {$0\xo0$};
+	\node [dimensions, macrocolor] at (0D_macro.north east) {$\macrotext{(0)}\black{\xo}\microtext{(\phantom{3})}$};
 	\node [physics] at (0D_macro.south east) {Fast diffusion \\ in electrolyte};
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,21 +110,21 @@
 	\node [
 		modelpoint,
 		label=below:{
-			SPMePP \\
-			{\scriptsize (SPMe} \\
-			{\scriptsize with} \\
-			{\scriptsize potential} \\
-			{\scriptsize pair)}
+			EPPM \\[\labellinespace]
+			{\tiny Electrolyte} \\[\labellinespace]
+			{\tiny with} \\[\labellinespace]
+			{\tiny Potential} \\[\labellinespace]
+			{\tiny Pair Model}
 			}
 	]
 		 (2plus1D_0D) at ($(2plus1D -| 0D_micro)!0.8!(2plus1D -| 0D_micro.east)$) {};
 	\node [
 		modelpoint,
 		label=right:{
-			SPMeCC \\
-			{\scriptsize (SPMe} \\
-			{\scriptsize with current} \\
-			{\scriptsize collectors)}
+			SPMeCC \\[\labellinespace]
+			{\tiny Single Particle Model} \\[\labellinespace]
+			{\tiny with Electrolyte and} \\[\labellinespace]
+			{\tiny Current Collectors}
 			}
 	]
 		(SPMeCC)
@@ -132,14 +132,19 @@
 		{};
 	\node [
 		modelpoint,
-		label=below:{ SPMeCC \\ (fast \\ particle) }
+		label=below:{ ECCM \\[\labellinespace] 
+		  {\tiny Electrolyte} \\[\labellinespace]
+		  {\tiny with Current} \\[\labellinespace]
+		  {\tiny Collectors} \\[\labellinespace]
+		  {\tiny Model}
+		}
 	]
 		(2plusbar1D_0D) at (SPMeCC-| 2plus1D_0D) {};
 	% Results
 	\node [axisbox, fill=white, draw,line width=3mm, below left = 5cm and -1cm of particle_distribution, anchor=north west, minimum width=53.5cm,minimum height=14cm]
 		(2D_results) {\hspace{1.5em} \includegraphics{figures/V_SPMeCC} \includegraphics{figures/V_2D} \includegraphics{figures/T_2D}};
 	\node [anchor=north west, align=left, font=\small] (2D_title)
-		at (2D_results.north west) {Lithium cobalt oxide};
+		at (2D_results.north west) {Lithium Cobalt Oxide};
 
 	\picbox{images/portraits/sulzer.jpg}{tino_2D}{2D_results.south west}{south west}
 	\picbox{images/portraits/ScottMarquis.png}{scott_2D}{tino_2D.north west}{south west}
@@ -156,9 +161,8 @@
 	\node [
 		modelpoint,
 		label=right:{
-			DFN \\
-			{\scriptsize (Doyle-Fuller-} \\
-			{\scriptsize Newman)}
+			DFN \\[\labellinespace]
+			{\tiny Doyle-Fuller-Newman}
 		}
 	]
 		(DFN) at
@@ -166,8 +170,7 @@
 	\node [
 		modelpoint,
 		label=right:{
-			SPM {\scriptsize (Single} \\
-			{\scriptsize Particle Model)}
+		  SPM \\[\labellinespace] {\tiny Single Particle Model}
 		}
 	]
 		(SPM)
@@ -176,10 +179,9 @@
 	\node [
 		modelpoint,
 		label=right:{
-			SPMe \\
-			{\scriptsize (Single} \\
-			{\scriptsize Particle Model} \\
-			{\scriptsize with electrolyte)}
+			SPMe \\[\labellinespace]
+			{\tiny Single Particle Model} \\[\labellinespace]
+			{\tiny with Electrolyte}
 		}
 	]
 		(SPMe) at ($(SPM)!0.5!(DFN)$) {};
@@ -187,7 +189,7 @@
 	\node [axisbox, below left = 1.5cm and 0cm of 2D_results, anchor=north west]
 	(SPM_results) {\includestandalone[width=25cm, height=24cm]{plot_SPM}};
 	\node [anchor=north west, align=left, font=\small] (2D_title)
-		at (SPM_results.north west) {Lithium cobalt oxide};
+		at (SPM_results.north west) {Lithium Cobalt Oxide};
 	\picbox{images/portraits/rtimms_photo.jpg}{rob_SPM}{SPM_results.south east}{south east}
 	\picbox{images/portraits/ScottMarquis.png}{scott_SPM}{rob_SPM.south west}{south east}
 
@@ -202,14 +204,15 @@
 	\node [
 		modelpoint,
 		label=right:{
-				DPM \\ {\tiny (Distributed Particle Model)}
+				DPM \\[\labellinespace] {\tiny Distributed Particle Model}
 			}
 	]
 		(DPM) at (SPM -| particle_distribution) {};
 	\node [
 		modelpoint,
 		label=right:{
-			MPM {\scriptsize (Multiple } \\ {\scriptsize Particle Model)}
+			MPM \\[\labellinespace] 
+			{\tiny Multiple Particle Model}
 		}
 	]
 		(MPM) at ($(SPM)!0.5!(DPM)$) {};
@@ -218,7 +221,7 @@
 		at ($(0D_macro.north-| SPM_results.west)!0.5!(DPM-| SPM_results.west)$)
 		{\includegraphics[height=14.5cm]{figures/PSD_results_1}\includegraphics[height=14.5cm]{figures/PSD_results_2}};
 	\node [anchor=north west, align=left, font=\small] (2D_title)
-		at (distributed_results.north west) {Lithium cobalt oxide};
+		at (distributed_results.north west) {Lithium Cobalt Oxide};
 	\picbox{images/portraits/tobykirk_photo.jpg}{toby}{distributed_results.south west}{south west}
 
 	% Arrows
@@ -231,17 +234,29 @@
 	%
 	\node [
 		modelpoint,
-		label=below:{DFN \\ (fast \\ particle)}
+		label=below:{EM \\[\labellinespace]
+		  {\tiny Electrolyte}\\[\labellinespace]
+		  {\tiny Model}
+		}
 	]
 		(DFNfast) at (DFN -| 2plus1D_0D) {};
 	\node [
 		modelpoint,
-		label=below:{ODE \\ model}
+		label=below:{ODEM \\[\labellinespace] 
+	 	{\tiny Ordinary} \\[\labellinespace]
+		{\tiny Differential} \\[\labellinespace] 
+		{\tiny Equation} \\[\labellinespace]
+		{\tiny Model}
+		}
 	]
 		(SPMfast) at (SPM -| 2plus1D_0D) {};
 	\node [
 		modelpoint,
-		label=below:{SPMe \\ (fast \\ particle)}
+		label=below:{REM \\[\labellinespace]
+		  {\tiny Reduced} \\[\labellinespace] 
+		  {\tiny Electrolyte} \\[\labellinespace]
+		  {\tiny Model}
+	  }
 	]
 		(SPMefast) at ($(SPMfast)!0.5!(DFNfast)$) {};
 	% Results
@@ -249,7 +264,7 @@
 	\node [axisbox, fill=white, draw,line width=3mm, right = 2cm of distributed_results.south east, anchor=south west,minimum width=18cm,minimum height=44.5cm] (fast_results) {};
 	% lead-acid
 	\node [anchor=north west] (lead_acid_title)
-		at (fast_results.north west) {\small Lead-acid};
+		at (fast_results.north west) {\small Lead-Acid};
 	\picbox{images/portraits/sulzer.jpg}{tino_fast}{fast_results.north east}{north east}
 	\node [anchor=north] (lead_acid)
 		at (lead_acid_title.south -| fast_results.north)
@@ -260,7 +275,7 @@
 	%lifp
 	\node [anchor=north west] (lifp_title)
 		at (lead_acid.south -| fast_results.west)
-		{\small Lithium iron phosphate};
+		{\small Lithium Iron Phosphate};
 	\node [anchor=south] at (fast_results.south)
 		{\includegraphics[width=16cm]{figures/V_T_ODEs_DFN}};
 	\picbox{images/portraits/hennessy_photo.jpeg}{matt_fast}{lead_acid.south -| fast_results.east}{north east}
