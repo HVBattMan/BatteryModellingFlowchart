@@ -40,7 +40,7 @@
   				grid=major, %both, major or minor
   				major grid style={dashed, line width=0.2pt},
   				cycle list name=mylist,
-				title = {\textbf{DFN vs. SPM vs. SPMe}},
+				title = {\textbf{Lead-acid models}},
   				legend style={
 						name=leg,
 						line width = \AXISLINEWIDTH,
@@ -67,7 +67,7 @@
 			%\node[fill=white, draw, align=center, below=1mm, anchor=north east] (1) at (leg.south east) {Word: Text};
 
 			\begin{customlegend}[
-				legend entries={DFN,SPM,SPMe},
+				legend entries={DFN,SPMe,SPM},
 				legend style={
 					at={(leg.west)},
 					left=3mm,
@@ -83,7 +83,7 @@
   		\end{customlegend}
 
 			\begin{axis}[
-				at={(0cm, -15cm)},
+				at={(0cm, -14cm)},
 				width = 15cm,
 				height = 9cm,
 				ymin = 0,
@@ -95,7 +95,7 @@
 				axis line style = {line width=\AXISLINEWIDTH},
 				tick style = {line width=0.3mm, black},
 				legend style ={
-					at={(0.4,-0.3)},
+					at={(0.4,-0.4)},
 					anchor=north,
 					legend columns=-1,
 					/tikz/every even column/.append style={column sep=0.5cm}
@@ -109,15 +109,11 @@
 			\addplot[dashdotdotted, color=green!70!black, opacity=0.4] table{tino_data/concs/LOQS/0.5C_idx=251.dat};
 			\addplot[dashdotdotted, color=green!70!black, opacity=0.7] table{tino_data/concs/LOQS/0.5C_idx=502.dat};
 			\addplot[dashdotdotted, color=green!70!black, opacity=0.9999999999999999] table{tino_data/concs/LOQS/0.5C_idx=753.dat};
-			\addplot[dotted, color=red, opacity=0.1] table{tino_data/concs/FOQS/0.5C_idx=0.dat};
-			\addplot[dotted, color=red, opacity=0.4] table{tino_data/concs/FOQS/0.5C_idx=251.dat};
-			\addplot[dotted, color=red, opacity=0.7] table{tino_data/concs/FOQS/0.5C_idx=502.dat};
-			\addplot[dotted, color=red, opacity=0.9999999999999999] table{tino_data/concs/FOQS/0.5C_idx=753.dat};
 			\addplot[dashed, color=blue, opacity=0.1] table{tino_data/concs/Composite/0.5C_idx=0.dat};
 			\addplot[dashed, color=blue, opacity=0.4] table{tino_data/concs/Composite/0.5C_idx=251.dat};
 			\addplot[dashed, color=blue, opacity=0.7] table{tino_data/concs/Composite/0.5C_idx=502.dat};
 			\addplot[dashed, color=blue, opacity=0.9999999999999999] table{tino_data/concs/Composite/0.5C_idx=753.dat};
-			\legend{,,,Numerical,,,,LOQS,,,,FOQS,,,,Composite}
+			\legend{,,,DFN,,,,SPMe,,,,SPM,,,,}
 
 		\end{axis}
 

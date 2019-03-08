@@ -156,9 +156,9 @@
 	\node [
 		modelpoint,
 		label=right:{
-			DFN {\scriptsize (Doyle-} \\
-			{\scriptsize Fuller-Newman} \\
-			{\scriptsize model)}
+			DFN \\
+			{\scriptsize (Doyle-Fuller-} \\
+			{\scriptsize Newman)}
 		}
 	]
 		(DFN) at
@@ -167,7 +167,7 @@
 		modelpoint,
 		label=right:{
 			SPM {\scriptsize (Single} \\
-			{\scriptsize particle model)}
+			{\scriptsize Particle Model)}
 		}
 	]
 		(SPM)
@@ -176,8 +176,9 @@
 	\node [
 		modelpoint,
 		label=right:{
-			SPMe {\scriptsize (Single} \\
-			{\scriptsize particle model} \\
+			SPMe \\
+			{\scriptsize (Single} \\
+			{\scriptsize Particle Model} \\
 			{\scriptsize with electrolyte)}
 		}
 	]
@@ -196,19 +197,19 @@
 	\draw [results_arrow] (SPM) -- (SPM_results.south east);
 
 	%
-	% Distributed particle models
+	% Distributed Particle Models
 	%
 	\node [
 		modelpoint,
 		label=right:{
-				DPM {\scriptsize (Distributed } \\ {\scriptsize particle model)}
+				DPM \\ {\tiny (Distributed Particle Model)}
 			}
 	]
 		(DPM) at (SPM -| particle_distribution) {};
 	\node [
 		modelpoint,
 		label=right:{
-			MPM {\scriptsize (Multiple } \\ {\scriptsize particle model)}
+			MPM {\scriptsize (Multiple } \\ {\scriptsize Particle Model)}
 		}
 	]
 		(MPM) at ($(SPM)!0.5!(DPM)$) {};
