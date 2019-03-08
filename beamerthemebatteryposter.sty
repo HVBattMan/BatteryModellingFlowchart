@@ -14,7 +14,10 @@
 			 \parbox{\linewidth}{\normalbaselines\centering\usebeamercolor{title in headline}\color{fg}{\bfseries\rmfamily\huge\inserttitle\par}}
 		 \end{minipage}%
 		 \begin{minipage}{0.15\textwidth}
-			 \includegraphics[width=0.9\textwidth]{images/group-picture.jpg}%
+			 {\setlength{\fboxsep}{0pt}%
+			 \setlength{\fboxrule}{0.2em}%
+			 \fbox{\includegraphics[width=0.9\textwidth]{images/group-picture.jpg}}%
+		 }
 		 \end{minipage}
      \vskip1em
    	 \rule{0.9\textwidth}{0.2em}
