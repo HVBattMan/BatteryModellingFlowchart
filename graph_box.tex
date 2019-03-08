@@ -130,10 +130,10 @@
 	% Results
 	\node [axisbox, fill=white, draw,line width=3mm, below left = 5cm and -1cm of particle_distribution, anchor=north west, minimum width=54.5cm,minimum height=14cm]
 		(2D_results) {\hspace{1.5em} \includegraphics{figures/V_SPMeCC} \includegraphics{figures/V_2D} \includegraphics{figures/T_2D}};
-	\node [profile_pic] (rob_2D) at (2D_results.south west)	
+	\node [profile_pic] (rob_2D) at (2D_results.south west)
 		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
 	\node [profile_pic] (tino_2D) at (rob_2D.north west)
-		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};		
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
 	\node [profile_pic] (scott_2D) at (tino_2D.north west)
 		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
 
@@ -243,14 +243,29 @@
 	]
 		(SPMefast) at ($(SPMfast)!0.5!(DFNfast)$) {};
 	% Results
-	% make this a tikzstyle 
+	% make this a tikzstyle
 	\node [axisbox, fill=white, draw,line width=3mm, right = 3cm of distributed_results.south east, anchor=south west,minimum width=18cm,minimum height=43cm] (fast_results) {};
+	% lead-acid
+	\node [anchor=north west] (lead_acid_title)
+		at (fast_results.north west) {\small Lead-acid};
+	\node [profile_pic, anchor=north east] (tino_fast) at (fast_results.north east)
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
+	\node [anchor=north] (lead_acid_voltages)
+		at (lead_acid_title.south -| fast_results.north)
+		{\includegraphics[width=16cm]{figures/V_T_ODEs_DFN}};
+	\node [anchor=north] (lead_acid_concentration)
+		at (lead_acid_voltages.south)
+		{\includegraphics[width=16cm]{figures/V_T_ODEs_DFN}};
+	\draw [line width=1mm]
+		(lead_acid_concentration.south -| fast_results.west)
+		-- (lead_acid_concentration.south -| fast_results.east);
+	%lifp
+	\node [anchor=north west] (lifp_title)
+		at (lead_acid_concentration.south -| fast_results.west) {\small LiFP};
 	\node [anchor=south] at (fast_results.south)
 		{\includegraphics[width=16cm]{figures/V_T_ODEs_DFN}};
-
-	\node [profile_pic] (tino_fast) at (fast_results.south west)
-		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
-	\node [profile_pic] (matt_fast) at (tino_fast.south east)
+	\node [profile_pic, anchor=north east] (matt_fast) at 
+		(lead_acid_concentration.south -| fast_results.east)
 		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
 	% Arrows
 	\draw [results_arrow] (DFNfast) -- (DFNfast -| fast_results.east);
