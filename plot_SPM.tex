@@ -1,6 +1,8 @@
-%% Put any plot commands in here 
+% !TEX root = batteryposter.tex
 
-% noniso{D, nx, ylim} 
+%% Put any plot commands in here
+
+% noniso{D, nx, ylim}
 
 %\definecolor{c1}{RGB}{102,194,165}
 %\definecolor{c2}{RGB}{252,141,98}
@@ -15,17 +17,17 @@
 \input{plot_parameters}
 
 \begin{document}
-	
+
 
 	\begin{tikzpicture}[]
 	  \scriptsize
 	  \draw[line width=3mm, fill=white] (0,0) rectangle (25cm, -24cm);
 	  % \draw[line width=2mm] (0,0)--(25cm,0) -- (25cm, -24cm)--(0,-24cm)--(0,0);
-	
+
 			\begin{axis}
 				[
 				width=19cm,
-				height=10cm,
+				height=9cm,
 				xlabel={Discharge Capacity ($\SI{}{\ampere\hour/\metre^2}$)},
 				ylabel={Voltage (V)},
 				ylabel shift = 0.2cm,
@@ -35,22 +37,22 @@
 				xmin=0,
   				xmax=25,
   				ymin=3.2,
-  				ymax=3.9,  	
+  				ymax=3.9,
   				minor tick num=1,
 				yticklabel shift =0.2cm,
 				xticklabel shift =0.3cm,
   				grid=major, %both, major or minor
   				major grid style={dashed, line width=0.2pt},
-  				cycle list name=mylist, 
+  				cycle list name=mylist,
 				title = {\textbf{DFN vs. SPM vs. SPMe}},
   				legend pos=outer north east,
   				legend style={name=leg, line width = \AXISLINEWIDTH},
 				at = {(3.2cm, -10cm)}
-				]	
+				]
 				\foreach \x in {0.1, 0.5, 1, 2, 3}{
 					\addplot table [col sep=comma, x index=0, y index=1]
 					{scott_data/C\x.dat};
-					
+
 					\edef\temp{\noexpand\addlegendentry{\x C}}
 					\temp
 				}
@@ -61,21 +63,21 @@
 					{scott_data/C\x.dat};
 					}
 			\end{axis}
-							
+
 			%\node[fill=white, draw, align=center, below=1mm, anchor=north east] (1) at (leg.south east) {Word: Text};
-			
+
 			\begin{customlegend}[legend entries={DFN,SPM,SPMe},legend style={at={(leg.south)},below=3mm, anchor=north, line width=\AXISLINEWIDTH}]
     			\addlegendimage{black, line width=\PLOTLINES}
     			\addlegendimage{black,dashed, line width=\PLOTLINES}
     			\addlegendimage{black, dotted, line width=\PLOTLINES}
     		\end{customlegend}
 
-	
-			\begin{semilogyaxis} 
+
+			\begin{semilogyaxis}
 				[
 				at={(3.8cm, -22.2cm)},
 				  ybar,
-				  height=9.5cm, 
+				  height=9.5cm,
 				  width=16.3cm,
 				  bar width=0.5cm,
 				  enlargelimits=0.15,
@@ -90,23 +92,18 @@
 				  yticklabel shift =0.2cm,
 				  xticklabel shift =0.1cm,
 				  % nodes near coords,
-				  % nodes near coords align={vertical},		
+				  % nodes near coords align={vertical},
 				  tick style = {line width=0.3mm, black},
 				  title = {\textbf{Versions of the SPMe (vs. DFN)}},
 				  log origin=infty,
-				]	
+				]
 				\addplot[fill=bar1, line width=0.7mm, draw=bar1out] coordinates {(0.1C, 0.0018) (0.5C,0.0112) (1C,0.0294) (2C,0.0617) (3C,0.1171) };
 				\addplot[fill=bar2, line width=0.7mm, draw=bar2out] coordinates {(0.1C, 0.0121) (0.5C,0.0541) (1C,0.1024) (2C,0.1966) (3C,0.305) };
 				\addplot[fill=bar3, line width=0.7mm, draw=bar3out]coordinates {(0.1C, 0.047) (0.5C,0.0282) (1C,0.06) (2C,0.1128) (3C,0.1782) };
 				\addplot[fill=bar4, line width=0.7mm, draw=bar4out]coordinates {(0.1C, 0.0199) (0.5C,0.0943) (1C,0.1764) (2C,0.3411) (3C,0.5126) };
 				\legend{Oxford, Literature A, Literature B, Literature C};
 			\end{semilogyaxis}
-							
-	
+
+
 	\end{tikzpicture}
 \end{document}
-
-
-
-
-

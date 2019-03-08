@@ -130,12 +130,8 @@
 	% Results
 	\node [axisbox, fill=white, draw,line width=3mm, below left = 5cm and -1cm of particle_distribution, anchor=north west, minimum width=54.5cm,minimum height=14cm]
 		(2D_results) {\hspace{1.5em} \includegraphics{figures/V_SPMeCC} \includegraphics{figures/V_2D} \includegraphics{figures/T_2D}};
-	% \node [profile_pic] (tino_2D) at (2D_results.south west)
-	% 	{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{images/portraits/sulzer.jpg}};		
-	% \node [profile_pic] (scott_2D) at (tino_2D.north west)
-	% 	{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{images/portraits/ScottMarquis.png}};
-	% \node [profile_pic] (rob_2D) at (scott_2D.north west)	
-	% 	{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{images/portraits/rtimms_photo.jpg}};
+	\node [anchor=north west, align=left, font=\small] (2D_title)
+		at (2D_results.north west) {Lithium cobalt oxide};
 		
 	\picbox{images/portraits/sulzer.jpg}{tino_2D}{2D_results.south west}{south west}
 	\picbox{images/portraits/ScottMarquis.png}{scott_2D}{tino_2D.north west}{south west}
@@ -180,16 +176,13 @@
 	]
 		(SPMe) at ($(SPM)!0.5!(DFN)$) {};
 	% Results
-	% \node [axisbox, below left = 2cm and 0cm of 2D_results, anchor=north west]
-	% 	(SPM_results) {\includegraphics[width=25cm, height=24cm]{example-image-a}};
 	\node [axisbox, below left = 2cm and 0cm of 2D_results, anchor=north west]
 	(SPM_results) {\includestandalone[width=25cm, height=24cm]{plot_SPM}};
-	% \node [profile_pic, anchor = south east] (rob_SPM) at (SPM_results.south east)
-	% 	{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{images/portraits/rtimms_photo.jpg}};
-	% 	\node [profile_pic, anchor = south east] (scott_SPM) at (rob_SPM.south west)
-	% 	{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{images/portraits/ScottMarquis.png}};
+	\node [anchor=north west, align=left, font=\small] (2D_title)
+		at (SPM_results.north west) {Lithium cobalt oxide};
 	\picbox{images/portraits/rtimms_photo.jpg}{rob_SPM}{SPM_results.south east}{south east}
 	\picbox{images/portraits/ScottMarquis.png}{scott_SPM}{rob_SPM.south west}{south east}
+
 	% Arrows
 	\draw [results_arrow] (DFN) -- (DFN -| SPM_results.east);
 	\draw [results_arrow] (SPMe) -- (SPMe -| SPM_results.east);
@@ -217,12 +210,13 @@
 	]
 		(MPM) at ($(SPM)!0.5!(DPM)$) {};
 	% Results
-	\node [axisbox, fill=white, draw,line width=3mm, anchor=north west, minimum width=33cm,minimum height=16cm] (distributed_results)
+	\node [axisbox, fill=white, draw, line width=3mm, anchor=north west, minimum width=33cm,minimum height=17cm] (distributed_results)
 		at ($(0D_macro.north-| SPM_results.west)!0.5!(DPM-| SPM_results.west)$)
 		{\includegraphics[height=14.5cm]{figures/PSD_results_1}\includegraphics[height=14.5cm]{figures/PSD_results_2}};
-	% \node [profile_pic] (toby) at (distributed_results.south west)
-	% 	{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{images/portraits/tobykirk_photo.jpg}};
+	\node [anchor=north west, align=left, font=\small] (2D_title)
+		at (distributed_results.north west) {Lithium cobalt oxide};
 	\picbox{images/portraits/tobykirk_photo.jpg}{toby}{distributed_results.south west}{south west}
+
 	% Arrows
 	\draw [results_arrow] (DPM) -- (distributed_results.north -| DPM);
 	\draw [results_arrow] (MPM) -- (distributed_results.north -| MPM);
@@ -255,8 +249,6 @@
 	% lead-acid
 	\node [anchor=north west] (lead_acid_title)
 		at (fast_results.north west) {\small Lead-acid};
-	% \node [profile_pic, anchor=north east] (tino_fast) at (fast_results.north east)
-	% 	{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{images/portraits/sulzer.jpg}};
 	\picbox{images/portraits/sulzer.jpg}{tino_fast}{fast_results.north east}{north east}
 	\node [anchor=north] (lead_acid_voltages)
 		at (lead_acid_title.south -| fast_results.north)
@@ -269,13 +261,11 @@
 		-- (lead_acid_concentration.south -| fast_results.east);
 	%lifp
 	\node [anchor=north west] (lifp_title)
-		at (lead_acid_concentration.south -| fast_results.west) {\small LiFP};
+		at (lead_acid_concentration.south -| fast_results.west)
+		{\small Lithium iron phosphate};
 	\node [anchor=south] at (fast_results.south)
 		{\includegraphics[width=16cm]{figures/V_T_ODEs_DFN}};
-		\picbox{images/portraits/hennessy_photo.jpeg}{matt_fast}{lead_acid_concentration.south -| fast_results.east}{north east}
-	% \node [profile_pic, anchor=north east] (matt_fast) at 
-	% 	(lead_acid_concentration.south -| fast_results.east)
-	% 	{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{images/portraits/hennessy_photo.jpeg}};
+	\picbox{images/portraits/hennessy_photo.jpeg}{matt_fast}{lead_acid_concentration.south -| fast_results.east}{north east}
 	% Arrows
 	\draw [results_arrow] (DFNfast) -- (DFNfast -| fast_results.east);
 	\draw [results_arrow] (SPMefast) -- (SPMefast -| fast_results.east);
