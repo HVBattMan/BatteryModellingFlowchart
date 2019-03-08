@@ -254,16 +254,17 @@
 	\node [anchor=north] (lead_acid)
 		at (lead_acid_title.south -| fast_results.north)
 		{\includestandalone[width=17cm]{plot_lead_acid}};
-	\draw [line width=1mm]
-		(lead_acid.south -| fast_results.west)
-		-- (lead_acid.south -| fast_results.east);
 	%lifp
+	\node (lifp_start) at ($(lead_acid.south) + (0,0cm)$) {};
+	\draw [line width=1mm]
+		(lifp_start -| fast_results.west)
+		-- (lifp_start -| fast_results.east);
 	\node [anchor=north west] (lifp_title)
-		at (lead_acid.south -| fast_results.west)
+		at (lifp_start -| fast_results.west)
 		{\small Lithium iron phosphate};
 	\node [anchor=south] at (fast_results.south)
 		{\includegraphics[width=16cm]{figures/V_T_ODEs_DFN}};
-	\picbox{images/portraits/hennessy_photo.jpeg}{matt_fast}{lead_acid.south -| fast_results.east}{north east}
+	\picbox{images/portraits/hennessy_photo.jpeg}{matt_fast}{lifp_start -| fast_results.east}{north east}
 	% Arrows
 	\draw [results_arrow] (DFNfast) -- (DFNfast -| fast_results.east);
 	\draw [results_arrow] (SPMefast) -- (SPMefast -| fast_results.east);
