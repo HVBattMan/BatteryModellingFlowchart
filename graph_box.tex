@@ -109,26 +109,34 @@
 	%
 	\node [
 		modelpoint,
-		label=right:{\includedimensions{$\macrotext{2\xo1}\black{\xo}\microtext{0}$}}
+		label=below:{
+			SPMePP \\
+			{\scriptsize (SPMe} \\
+			{\scriptsize with} \\
+			{\scriptsize potential} \\
+			{\scriptsize pair)}
+			}
 	]
 		 (2plus1D_0D) at ($(2plus1D -| 0D_micro)!0.8!(2plus1D -| 0D_micro.east)$) {};
 	\node [
 		modelpoint,
 		label=right:{
-				\includedimensions{$\macrotext{2\xo\bar{1}}\black{\xo}\microtext{1}$ (}
-				SPMeCC
-				\includedimensions{)}
+			SPMeCC \\
+			{\scriptsize (SPMe} \\
+			{\scriptsize with current} \\
+			{\scriptsize collectors)}
 			}
 	]
 		(SPMeCC)
-		at ($(2plusbar1D.north -| single_particle)!0.1!(2plusbar1D -| single_particle)$) {};
+		at ($(2plusbar1D.north -| single_particle.west)!0.8!(2plusbar1D -| single_particle)$)
+		{};
 	\node [
 		modelpoint,
-		label=right:{\includedimensions{$\macrotext{2\xo\bar{1}}\black{\xo}\microtext{0}$}}
+		label=below:{ SPMeCC \\ (fast \\ particle) }
 	]
 		(2plusbar1D_0D) at (SPMeCC-| 2plus1D_0D) {};
 	% Results
-	\node [axisbox, fill=white, draw,line width=3mm, below left = 5cm and -1cm of particle_distribution, anchor=north west, minimum width=54.5cm,minimum height=14cm]
+	\node [axisbox, fill=white, draw,line width=3mm, below left = 5cm and -1cm of particle_distribution, anchor=north west, minimum width=53.5cm,minimum height=14cm]
 		(2D_results) {\hspace{1.5em} \includegraphics{figures/V_SPMeCC} \includegraphics{figures/V_2D} \includegraphics{figures/T_2D}};
 	\node [anchor=north west, align=left, font=\small] (2D_title)
 		at (2D_results.north west) {Lithium cobalt oxide};
@@ -148,35 +156,34 @@
 	\node [
 		modelpoint,
 		label=right:{
-			\includedimensions{$\macrotext{0\xo1}\black{\xo}\microtext{1}$ (}
-			DFN
-			\includedimensions{)}
+			DFN {\scriptsize (Doyle-} \\
+			{\scriptsize Fuller-Newman} \\
+			{\scriptsize model)}
 		}
 	]
 		(DFN) at
-		($(0plus1D.north -| single_particle)!0.5!(2plusbar1D.south -| single_particle)$) {};
+		($(0plus1D.north -| SPMeCC)!0.5!(2plusbar1D.south -| SPMeCC)$) {};
 	\node [
 		modelpoint,
 		label=right:{
-			\includedimensions{$\macrotext{0\xo0}\black{\xo}\microtext{1}$ (}
-			SPM
-			\includedimensions{)}
+			SPM {\scriptsize (Single} \\
+			{\scriptsize particle model)}
 		}
 	]
 		(SPM)
 		% at ($(0D_macro -| single_particle)!0.6!(0D_macro.north -| single_particle)$) {};
-		at ($(0D_macro -| single_particle)!0.6!(0plus1D -| single_particle)$) {};
+		at ($(0D_macro -| SPMeCC)!0.6!(0plus1D -| SPMeCC)$) {};
 	\node [
 		modelpoint,
 		label=right:{
-			\includedimensions{$\macrotext{0\xo0}\black{\xo}\microtext{1}$ (}
-			SPMe
-			\includedimensions{)}
+			SPMe {\scriptsize (Single} \\
+			{\scriptsize particle model} \\
+			{\scriptsize with electrolyte)}
 		}
 	]
 		(SPMe) at ($(SPM)!0.5!(DFN)$) {};
 	% Results
-	\node [axisbox, below left = 2cm and 0cm of 2D_results, anchor=north west]
+	\node [axisbox, below left = 1.5cm and 0cm of 2D_results, anchor=north west]
 	(SPM_results) {\includestandalone[width=25cm, height=24cm]{plot_SPM}};
 	\node [anchor=north west, align=left, font=\small] (2D_title)
 		at (SPM_results.north west) {Lithium cobalt oxide};
@@ -194,18 +201,14 @@
 	\node [
 		modelpoint,
 		label=right:{
-				\includedimensions{$\macrotext{0\xo0}\black{\xo}\microtext{1\xo1}$ (}
-				DPM
-				\includedimensions{)}
+				DPM {\scriptsize (Distributed } \\ {\scriptsize particle model)}
 			}
 	]
 		(DPM) at (SPM -| particle_distribution) {};
 	\node [
 		modelpoint,
 		label=right:{
-			\includedimensions{$\macrotext{0\xo0}\black{\xo}\microtext{1}$ (}
-			MPM
-			\includedimensions{)}
+			MPM {\scriptsize (Multiple } \\ {\scriptsize particle model)}
 		}
 	]
 		(MPM) at ($(SPM)!0.5!(DPM)$) {};
@@ -227,25 +230,22 @@
 	%
 	\node [
 		modelpoint,
-		label=right:{\includedimensions{$\macrotext{0\xo1}\black{\xo}\microtext{0}$}}
+		label=below:{DFN \\ (fast \\ particle)}
 	]
 		(DFNfast) at (DFN -| 2plus1D_0D) {};
 	\node [
 		modelpoint,
-		label=right:{\includedimensions{$\macrotext{0\xo0}\black{\xo}\microtext{0}$}}
+		label=below:{ODE \\ model}
 	]
 		(SPMfast) at (SPM -| 2plus1D_0D) {};
 	\node [
 		modelpoint,
-		label=right:{
-			\includedimensions{$\macrotext{0\xo0}\black{\xo}\microtext{1}$ (}
-			\includedimensions{)}
-		}
+		label=below:{SPMe \\ (fast \\ particle)}
 	]
 		(SPMefast) at ($(SPMfast)!0.5!(DFNfast)$) {};
 	% Results
 	% make this a tikzstyle
-	\node [axisbox, fill=white, draw,line width=3mm, right = 3cm of distributed_results.south east, anchor=south west,minimum width=18cm,minimum height=43cm] (fast_results) {};
+	\node [axisbox, fill=white, draw,line width=3mm, right = 2cm of distributed_results.south east, anchor=south west,minimum width=18cm,minimum height=44.5cm] (fast_results) {};
 	% lead-acid
 	\node [anchor=north west] (lead_acid_title)
 		at (fast_results.north west) {\small Lead-acid};
