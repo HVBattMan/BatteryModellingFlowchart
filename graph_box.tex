@@ -130,12 +130,12 @@
 	% Results
 	\node [axisbox, fill=white, draw,line width=3mm, below left = 5cm and -1cm of particle_distribution, anchor=north west, minimum width=54.5cm,minimum height=14cm]
 		(2D_results) {\hspace{1.5em} \includegraphics{figures/V_SPMeCC} \includegraphics{figures/V_2D} \includegraphics{figures/T_2D}};
-	\node [profile_pic] (rob_2D) at (2D_results.south west)	
-		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
-	\node [profile_pic] (tino_2D) at (rob_2D.north west)
-		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};		
+	\node [profile_pic] (tino_2D) at (2D_results.south west)
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{images/portraits/sulzer.jpg}};		
 	\node [profile_pic] (scott_2D) at (tino_2D.north west)
-		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{images/portraits/ScottMarquis.png}};
+	\node [profile_pic] (rob_2D) at (scott_2D.north west)	
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{images/portraits/rtimms_photo.jpg}};
 
 	% Arrows
 	\draw [results_arrow] (2plus1D_0D) -- (2plus1D_0D -| 2D_results.east);
@@ -180,10 +180,10 @@
 	% 	(SPM_results) {\includegraphics[width=25cm, height=24cm]{example-image-a}};
 	\node [axisbox, below left = 2cm and 0cm of 2D_results, anchor=north west]
 	(SPM_results) {\includestandalone[width=25cm, height=24cm]{plot_SPM}};
-	\node [profile_pic] (rob_SPM) at (SPM_results.east)
-		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
-	\node [profile_pic] (scott_SPM) at (rob_SPM.south east)
-		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
+	\node [profile_pic, anchor = south east] (rob_SPM) at (SPM_results.south east)
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{images/portraits/rtimms_photo.jpg}};
+		\node [profile_pic, anchor = south east] (scott_SPM) at (rob_SPM.south west)
+		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{images/portraits/ScottMarquis.png}};
 	% Arrows
 	\draw [results_arrow] (DFN) -- (DFN -| SPM_results.east);
 	\draw [results_arrow] (SPMe) -- (SPMe -| SPM_results.east);
