@@ -31,7 +31,8 @@
 	\node [axisbox, anchor=north west](3D_homogenised_micro) at (0,70) {\includegraphics[width=\FIGWIDTH, height=\FIGHEIGHT]{figures/3D_homogenised_micro}};
 	\draw [black, line width=\BORDERWIDTH]
 		(3D_homogenised_micro.south west) rectangle (3D_homogenised_micro.north east);
-	\node [dimensions] at (3D_homogenised_micro.north east) {};
+	\node [dimensions] at (3D_homogenised_micro.north east) {$\macrotext{3}\black{\xo}\microtext{3}$};
+	\node [physics] at (3D_homogenised_micro.south east) {Full 3D};
 
 	%
 	% Microscale row and axis
@@ -177,7 +178,7 @@
 	% \node [axisbox, below left = 2cm and 0cm of 2D_results, anchor=north west]
 	% 	(SPM_results) {\includegraphics[width=25cm, height=24cm]{example-image-a}};
 	\node [axisbox, below left = 2cm and 0cm of 2D_results, anchor=north west]
-	(SPM_results) {\includestandalone[width=25cm, height=24cm]{plot}};
+	(SPM_results) {\includestandalone[width=25cm, height=24cm]{plot_SPM}};
 	\node [profile_pic] (rob_SPM) at (SPM_results.east)
 		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
 	\node [profile_pic] (scott_SPM) at (rob_SPM.south east)
@@ -241,9 +242,11 @@
 	]
 		(SPMefast) at ($(SPMfast)!0.5!(DFNfast)$) {};
 	% Results
-	\node [axisbox, right = 3cm of distributed_results.south east, anchor=south west]
-		(fast_results)
-		{\includegraphics[width=18cm, height=43cm]{example-image-a}};
+	% make this a tikzstyle 
+	\node [axisbox, fill=white, draw,line width=3mm, right = 3cm of distributed_results.south east, anchor=south west,minimum width=18cm,minimum height=43cm] (fast_results) {};
+	\node [anchor=south] at (fast_results.south)
+		{\includegraphics[width=16cm]{figures/V_T_ODEs_DFN}};
+
 	\node [profile_pic] (tino_fast) at (fast_results.south west)
 		{\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{example-image-b}};
 	\node [profile_pic] (matt_fast) at (tino_fast.south east)
