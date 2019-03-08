@@ -53,6 +53,13 @@
 \tikzstyle{profile_pic} = [anchor=south west]
 \newcommand{\PPWIDTH}{2cm}
 \newcommand{\PPHEIGHT}{2cm}
+\newcommand{\PPBORDERWIDTH}{1mm}
+
+
+\newcommand{\picbox}[4]{
+\node [anchor=#4] (#2) at (#3) {\includegraphics[width=\PPWIDTH, height=\PPHEIGHT]{#1}};
+\draw [line width=\PPBORDERWIDTH] ($ (#2) - (\PPWIDTH/2,\PPHEIGHT/2) $) rectangle ++(\PPWIDTH, \PPHEIGHT);
+}
 
 % Textbox style
 \tikzstyle{textbox} = [
