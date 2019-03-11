@@ -132,7 +132,7 @@
 		{};
 	\node [
 		modelpoint,
-		label=below:{ ECCM \\[\labellinespace] 
+		label=below:{ ECCM \\[\labellinespace]
 		  {\tiny Electrolyte} \\[\labellinespace]
 		  {\tiny with Current} \\[\labellinespace]
 		  {\tiny Collectors} \\[\labellinespace]
@@ -211,7 +211,7 @@
 	\node [
 		modelpoint,
 		label=right:{
-			MPM \\[\labellinespace] 
+			MPM \\[\labellinespace]
 			{\tiny Multiple Particle Model}
 		}
 	]
@@ -242,9 +242,9 @@
 		(DFNfast) at (DFN -| 2plus1D_0D) {};
 	\node [
 		modelpoint,
-		label=below:{ODEM \\[\labellinespace] 
+		label=below:{ODEM \\[\labellinespace]
 	 	{\tiny Ordinary} \\[\labellinespace]
-		{\tiny Differential} \\[\labellinespace] 
+		{\tiny Differential} \\[\labellinespace]
 		{\tiny Equation} \\[\labellinespace]
 		{\tiny Model}
 		}
@@ -253,7 +253,7 @@
 	\node [
 		modelpoint,
 		label=below:{REM \\[\labellinespace]
-		  {\tiny Reduced} \\[\labellinespace] 
+		  {\tiny Reduced} \\[\labellinespace]
 		  {\tiny Electrolyte} \\[\labellinespace]
 		  {\tiny Model}
 	  }
@@ -270,7 +270,7 @@
 		at (lead_acid_title.south -| fast_results.north)
 		{\includestandalone[width=17cm]{plot_lead_acid}};
 	%lifp
-	\node (lifp_start) at ($(lead_acid.south) + (0,0cm)$) {};
+	\node (lifp_start) at ($(lead_acid.south) + (0,-1cm)$) {};
 	\draw [line width=1mm]
 		(lifp_start -| fast_results.west)
 		-- (lifp_start -| fast_results.east);

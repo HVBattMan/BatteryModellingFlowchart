@@ -32,14 +32,14 @@
 				tick style = {line width=0.3mm, black},
 				xmin=0,
   				xmax=25,
-  				ymin=3.2,
-  				ymax=3.9,
+  				ymin=10.5,
+  				ymax=13.5,
   				minor tick num=1,
 				yticklabel shift =0.2cm,
 				xticklabel shift =0.3cm,
   				grid=major, %both, major or minor
   				major grid style={dashed, line width=0.2pt},
-  				cycle list name=mylist,
+  				cycle list name=mylist_lead_acid,
 				title = {\textbf{Lead-acid models}},
   				legend style={
 						name=leg,
@@ -49,30 +49,27 @@
 						legend columns=-1,
 				  	/tikz/every even column/.append style={column sep=0.5cm}}
 				]
-				\foreach \x in {0.1, 0.5, 1, 2, 3}{
-					\addplot table [col sep=comma, x index=0, y index=1]
-					{scott_data/C\x.dat};
+				\foreach \x in {0.1C,0.2C,1C,5C}{
+					\addplot table {tino_data/voltages/Numerical/\x.dat};
 
-					\edef\temp{\noexpand\addlegendentry{\x C}}
+					\edef\temp{\noexpand\addlegendentry{\x}}
 					\temp
 				}
-				\foreach \x in {0.1, 0.5, 1, 2, 3}{
-					\addplot table [col sep=comma, x index=0, y index=2]
-					{scott_data/C\x.dat};
-					\addplot table [col sep=comma, x index=0, y index=3]
-					{scott_data/C\x.dat};
-					}
+				\foreach \x in {0.1C,0.2C,1C,5C}{
+				\addplot table {tino_data/voltages/Composite/\x.dat};
+					\addplot table {tino_data/voltages/LOQS/\x.dat};
+				}
 			\end{axis}
 
 			%\node[fill=white, draw, align=center, below=1mm, anchor=north east] (1) at (leg.south east) {Word: Text};
 
 			\begin{customlegend}[
-				legend entries={DFN,SPMe,SPM},
+				legend entries={EM,REM,ODEM},
 				legend style={
 					at={(leg.west)},
-					left=3mm,
-					anchor=east,
-					line width=\AXISLINEWIDTH,
+					left=1cm,
+					anchor= east,
+					line width=1mm,
 					% legend columns=-1,
 					% /tikz/every even column/.append style={column sep=0.5cm}
 				}
@@ -83,18 +80,22 @@
   		\end{customlegend}
 
 			\begin{axis}[
-				at={(0cm, -14.5cm)},
-				width = 15cm,
+				at={(-1cm, -14.5cm)},
+				width = 16cm,
 				height = 9cm,
 				ymin = 0,
-				ymax = 7,
+				ymax = 7.5,
 				xmin = 0,
 				xmax = 0.0036,
 				title = {\textbf{Concentration change (0.5C)}},
 			 	xlabel = {${x}$ (m)},
 				ylabel = {Concentration ($\si{\Molar}$)},
+				grid=major, %both, major or minor
+				major grid style={dashed, line width=0.2pt},
 				axis line style = {line width=\AXISLINEWIDTH},
 				tick style = {line width=0.3mm, black},
+				max space between ticks=800pt,
+				try min ticks=7,
 				legend style ={
 					at={(0.5,-0.4)},
 					anchor=north,
@@ -102,20 +103,31 @@
 					/tikz/every even column/.append style={column sep=0.5cm}
 				}
 			]
-			\addplot[color=black, opacity=0.1] table{tino_data/concs/Numerical/0.5C_idx=0.dat};
-			\addplot[color=black, opacity=0.4] table{tino_data/concs/Numerical/0.5C_idx=251.dat};
-			\addplot[color=black, opacity=0.7] table{tino_data/concs/Numerical/0.5C_idx=502.dat};
-			\addplot[color=black, opacity=0.9999999999999999] table{tino_data/concs/Numerical/0.5C_idx=753.dat};
-			\addplot[dashdotdotted, color=green!70!black, opacity=0.1] table{tino_data/concs/LOQS/0.5C_idx=0.dat};
-			\addplot[dashdotdotted, color=green!70!black, opacity=0.4] table{tino_data/concs/LOQS/0.5C_idx=251.dat};
-			\addplot[dashdotdotted, color=green!70!black, opacity=0.7] table{tino_data/concs/LOQS/0.5C_idx=502.dat};
-			\addplot[dashdotdotted, color=green!70!black, opacity=0.9999999999999999] table{tino_data/concs/LOQS/0.5C_idx=753.dat};
-			\addplot[dashed, color=blue, opacity=0.1] table{tino_data/concs/Composite/0.5C_idx=0.dat};
-			\addplot[dashed, color=blue, opacity=0.4] table{tino_data/concs/Composite/0.5C_idx=251.dat};
-			\addplot[dashed, color=blue, opacity=0.7] table{tino_data/concs/Composite/0.5C_idx=502.dat};
-			\addplot[dashed, color=blue, opacity=0.9999999999999999] table{tino_data/concs/Composite/0.5C_idx=753.dat};
-			\legend{,,,DFN,,,,SPMe,,,,SPM,,,,}
+			\addplot[color=black, line width=\PLOTLINES] table{tino_data/concs/Numerical/0.5C_idx=0.dat};
+			\addplot[color=black, line width=\PLOTLINES] table{tino_data/concs/Numerical/0.5C_idx=251.dat};
+			\addplot[color=black, line width=\PLOTLINES] table{tino_data/concs/Numerical/0.5C_idx=502.dat};
+			\addplot[color=black, line width=\PLOTLINES] table{tino_data/concs/Numerical/0.5C_idx=753.dat};
+			\addplot[dashdotdotted, color=green!70!black, line width=\PLOTLINES] table{tino_data/concs/LOQS/0.5C_idx=0.dat}
+			node [above, anchor=south east, text=black, line width=\PLOTLINES] {0\% DoD};
+			\addplot[dashdotdotted, color=green!70!black, line width=\PLOTLINES] table{tino_data/concs/LOQS/0.5C_idx=251.dat}
+			node [above, anchor=south east, text=black, line width=\PLOTLINES] {25\%};
+			\addplot[dashdotdotted, color=green!70!black, line width=\PLOTLINES] table{tino_data/concs/LOQS/0.5C_idx=502.dat}
+			node [above, anchor=south east, text=black, line width=\PLOTLINES] {50\%};
+			\addplot[dashdotdotted, color=green!70!black, line width=\PLOTLINES] table{tino_data/concs/LOQS/0.5C_idx=753.dat}
+			node [above, anchor=south east, text=black, line width=\PLOTLINES] {75\%};
+			\addplot[dashed, color=blue, line width=\PLOTLINES] table{tino_data/concs/Composite/0.5C_idx=0.dat};
+			\addplot[dashed, color=blue, line width=\PLOTLINES] table{tino_data/concs/Composite/0.5C_idx=251.dat};
+			\addplot[dashed, color=blue, line width=\PLOTLINES] table{tino_data/concs/Composite/0.5C_idx=502.dat};
+			\addplot[dashed, color=blue, line width=\PLOTLINES] table{tino_data/concs/Composite/0.5C_idx=753.dat};
+			\legend{,,,EM,,,,REM,,,,ODEM,,,,}
 
+			\node [inner sep=0,outer sep=0] (start) at (axis cs:0.0015,7) {};
+			\node [inner sep=0,outer sep=0] (end) at (axis cs:0.0015,1) {};
+			\draw[
+					-{Latex[length=5mm, width=5mm]},
+					line width=1mm,
+					>=stealth
+			] (start) -- (end) node [right] {time};
 		\end{axis}
 
 	\end{tikzpicture}
