@@ -209,11 +209,11 @@
 	\node [
 		modelpoint,
 		label=right:{
-			MPM \\[\labellinespace]
-			{\tiny Multiple Particle Model}
+			NPD \\[\labellinespace]
+			{\tiny Narrow Particle Distribution}
 		}
 	]
-		(MPM) at ($(SPM)!0.5!(DPM)$) {};
+		(NPD) at ($(SPM)!0.51!(DPM)$) {};
 	% Results
 	\node [axisbox, fill=white, draw, line width=3mm, anchor=north west, minimum width=33cm,minimum height=17cm] (distributed_results)
 		at ($(0D_macro.north-| SPM_results.west)!0.5!(DPM-| SPM_results.west)$)
@@ -224,7 +224,7 @@
 
 	% Arrows
 	\draw [results_arrow] (DPM) -- (distributed_results.north -| DPM);
-	\draw [results_arrow] (MPM) -- (distributed_results.north -| MPM);
+	\draw [results_arrow] (NPD) -- (distributed_results.north -| NPD);
 	\draw [results_arrow] (SPM) -- (distributed_results.north -| SPM);
 
 	%
