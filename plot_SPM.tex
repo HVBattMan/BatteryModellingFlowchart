@@ -42,7 +42,7 @@
   				grid=major, %both, major or minor
   				major grid style={dashed, line width=0.2pt},
   				cycle list name=mylist,
-				title = {\textbf{DFN vs. SPM vs. SPMe}},
+				title = {\textbf{DFN vs. SPMe vs. SPM}},
   				legend pos=outer north east,
   				legend style={name=leg, line width = \AXISLINEWIDTH},
 				at = {(3.2cm, -11cm)}
@@ -55,16 +55,16 @@
 					\temp
 				}
 				\foreach \x in {0.1, 0.5, 1, 2, 3}{
-					\addplot table [col sep=comma, x index=0, y index=2]
-					{scott_data/C\x.dat};
 					\addplot table [col sep=comma, x index=0, y index=3]
+					{scott_data/C\x.dat};
+					\addplot table [col sep=comma, x index=0, y index=2]
 					{scott_data/C\x.dat};
 					}
 			\end{axis}
 
 			%\node[fill=white, draw, align=center, below=1mm, anchor=north east] (1) at (leg.south east) {Word: Text};
 
-			\begin{customlegend}[legend entries={DFN,SPM,SPMe},legend style={at={(leg.south)},below=3mm, anchor=north, line width=\AXISLINEWIDTH}]
+			\begin{customlegend}[legend entries={DFN,SPMe,SPM},legend style={at={(leg.south)},below=3mm, anchor=north, line width=\AXISLINEWIDTH}]
     			\addlegendimage{black, line width=\PLOTLINES}
     			\addlegendimage{black,dashed, line width=\PLOTLINES}
     			\addlegendimage{black, dotted, line width=\PLOTLINES}
