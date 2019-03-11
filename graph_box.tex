@@ -110,9 +110,8 @@
 	\node [
 		modelpoint,
 		label=below:{
-			EPPM \\[\labellinespace]
-			{\tiny Electrolyte} \\[\labellinespace]
-			{\tiny with} \\[\labellinespace]
+			RPPM \\[\labellinespace]
+			{\tiny Reduced} \\[\labellinespace]
 			{\tiny Potential} \\[\labellinespace]
 			{\tiny Pair Model}
 			}
@@ -132,11 +131,10 @@
 		{};
 	\node [
 		modelpoint,
-		label=below:{ ECCM \\[\labellinespace]
-		  {\tiny Electrolyte} \\[\labellinespace]
-		  {\tiny with Current} \\[\labellinespace]
-		  {\tiny Collectors} \\[\labellinespace]
-		  {\tiny Model}
+		label=below:{ APPM \\[\labellinespace]
+		  {\tiny Averaged} \\[\labellinespace]
+		  {\tiny Potential} \\[\labellinespace]
+		  {\tiny Pair Model}
 		}
 	]
 		(2plusbar1D_0D) at (SPMeCC-| 2plus1D_0D) {};
@@ -234,9 +232,9 @@
 	%
 	\node [
 		modelpoint,
-		label=below:{EM \\[\labellinespace]
-		  {\tiny Electrolyte}\\[\labellinespace]
-		  {\tiny Model}
+		label=below:{NT \\[\labellinespace]
+		  {\tiny Newman-} \\[\labellinespace]
+			{\tiny Tiedemann}
 		}
 	]
 		(DFNfast) at (DFN -| 2plus1D_0D) {};
@@ -252,9 +250,9 @@
 		(SPMfast) at (SPM -| 2plus1D_0D) {};
 	\node [
 		modelpoint,
-		label=below:{REM \\[\labellinespace]
-		  {\tiny Reduced} \\[\labellinespace]
-		  {\tiny Electrolyte} \\[\labellinespace]
+		label=below:{FOQS \\[\labellinespace]
+		  {\tiny First-Order} \\[\labellinespace]
+		  {\tiny Quasi-Static} \\[\labellinespace]
 		  {\tiny Model}
 	  }
 	]

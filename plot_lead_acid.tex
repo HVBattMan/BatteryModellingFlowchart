@@ -40,7 +40,7 @@
   				grid=major, %both, major or minor
   				major grid style={dashed, line width=0.2pt},
   				cycle list name=mylist_lead_acid,
-				title = {\textbf{Lead-acid models}},
+				title = {\textbf{Lead-Acid Models}},
   				legend style={
 						name=leg,
 						line width = \AXISLINEWIDTH,
@@ -64,7 +64,7 @@
 			%\node[fill=white, draw, align=center, below=1mm, anchor=north east] (1) at (leg.south east) {Word: Text};
 
 			\begin{customlegend}[
-				legend entries={EM,REM,ODEM},
+				legend entries={NT,FOQS,ODEM},
 				legend style={
 					at={(leg.west)},
 					left=1cm,
@@ -87,7 +87,7 @@
 				ymax = 7.5,
 				xmin = 0,
 				xmax = 0.0036,
-				title = {\textbf{Concentration change (0.5C)}},
+				title = {\textbf{Concentration Change (0.5C)}},
 			 	xlabel = {${x}$ (m)},
 				ylabel = {Concentration ($\si{\Molar}$)},
 				grid=major, %both, major or minor
@@ -119,7 +119,7 @@
 			\addplot[dashed, color=blue, line width=\PLOTLINES] table{tino_data/concs/Composite/0.5C_idx=251.dat};
 			\addplot[dashed, color=blue, line width=\PLOTLINES] table{tino_data/concs/Composite/0.5C_idx=502.dat};
 			\addplot[dashed, color=blue, line width=\PLOTLINES] table{tino_data/concs/Composite/0.5C_idx=753.dat};
-			\legend{,,,EM,,,,REM,,,,ODEM,,,,}
+			\legend{,,,NT,,,,FOQS,,,,ODEM,,,,}
 
 			\node [inner sep=0,outer sep=0] (start) at (axis cs:0.0015,7) {};
 			\node [inner sep=0,outer sep=0] (end) at (axis cs:0.0015,1) {};
